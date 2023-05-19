@@ -1,3 +1,84 @@
+CREATE DATABASE IF NOT EXISTS Project;
+
+USE Project;
+
+DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftBesteld, HeeftOpties CASCADE;
+
+create table Gebruiker (
+    GebruikerId INTEGER auto_increment PRIMARY KEY,
+    Naam varchar(255) NOT NULL UNIQUE ,
+    Wachtwoord varchar(255) NOT NULL, 
+    Email varchar(255) NOT NULL,
+    Adminrole boolean NOT NULL,
+    Budget DECIMAL NOT NULL,
+    BudgetLimit BOOLEAN NOT NULL
+);
+
+CREATE TABLE Product(
+  ProductId INTEGER auto_increment PRIMARY KEY,
+  ProductNaam varchar(255) NOT NULL,
+  Productbeschrijving varchar(255),
+  ProductPrijs DECIMAL NOT NULL,
+  ProductCategorie VARCHAR(255) NOT NULL,
+  Vegan BOOLEAN,
+  Vega BOOLEAN
+);
+
+CREATE TABLE Bestelling (
+  BestellingId INTEGER auto_increment PRIMARY KEY,
+  ProductId INTEGER NOT NULL,
+  Totaal DECIMAL,
+  Prijs DECIMAL,
+  FOREIGN KEY (ProductId) REFERENCES Product (ProductId)             
+);
+
+CREATE TABLE Opties(
+  OptieId INTEGER auto_increment PRIMARY KEY,
+  OptieNaam VARCHAR(255) NOT NULL,
+  OptieBeschrijving VARCHAR(255),
+  OptiePrijs DECIMAL NOT NULL
+);
+
+CREATE TABLE Aanbieder(
+  AanbiederId INTEGER auto_increment PRIMARY KEY,
+  Naam varchar(255) NOT NULL
+);
+
+CREATE TABLE HeeftEenProduct (
+  AanbiederId INTEGER NOT NULL,
+  ProductId INTEGER NOT NULL ,
+  FOREIGN KEY (AanbiederId) REFERENCES Aanbieder (AanbiederId),
+  FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
+  CONSTRAINT PK_HeeftEenProduct PRIMARY KEY (AanbiederId,ProductId)
+);
+
+CREATE TABLE HeeftOpties(
+  OptieId INTEGER NOT NULL,
+  ProductId INTEGER NOT NULL,
+  FOREIGN KEY (OptieId) REFERENCES Opties (OptieId),
+  FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
+  CONSTRAINT PK_HeeftOpties PRIMARY KEY (OptieId, ProductId)
+);
+
+CREATE TABLE HeeftBesteld(
+  ProductId INTEGER NOT NULL,
+  BestellingId INTEGER NOT NULL,
+  FOREIGN KEY (ProductId) REFERENCES Product(ProductId),
+  FOREIGN KEY (BestellingId) REFERENCES Bestelling(BestellingId),
+  CONSTRAINT PK_HeeftBesteld PRIMARY KEY (ProductId, BestellingId)
+);
+
+CREATE TABLE HeeftEenBestelling
+(
+    BestellingId INTEGER NOT NULL,
+    GebruikerId  INTEGER NOT NULL,
+    FOREIGN KEY (BestellingId) REFERENCES Bestelling (BestellingId),
+    FOREIGN KEY (GebruikerId) REFERENCES Gebruiker (GebruikerId),
+    CONSTRAINT PK_HeeftEenBestelling PRIMARY KEY (BestellingId,GebruikerId)
+);
+
+
+
 -- TABLE Gebruiker
 INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget, BudgetLimit)
 VALUES ('Alice', 'password123', 'alice@example.com', true, 7.50, true);
