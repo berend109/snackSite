@@ -46,3 +46,47 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+/*banner style*/
+.banner-image-snacksite {
+    background-image: url("images/Kapsalon_dutch_meal.png");
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    background-position: 50% 50%;
+    background-size: 100% auto;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px black;
+    text-decoration-line: none;
+}
+.banner-image-snacksite h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 
+}
+.banner-image-snacksite em{
+    font-size: 20px;
+}
+
+.left-side-navbar-costum{
+    float: left;
+    margin-left: 7%;
+    color: rgba(255,255,255);
+}
+
+.right-side-navbar-costum {
+    float: right;
+    align-items: end;
+}
+
+.navigatiebar-customcss li{
+    font-size: 30px;
+    padding: 0px 20px;
+}
+
+.lunch_bestel_item{
+    margin: 20px;
+
+}
+
+
