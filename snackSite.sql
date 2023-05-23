@@ -5,13 +5,13 @@ USE Project;
 DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftBesteld, HeeftOpties CASCADE;
 
 create table Gebruiker (
-    GebruikerId INTEGER auto_increment PRIMARY KEY,
-    Naam varchar(255) NOT NULL UNIQUE ,
-    Wachtwoord varchar(255) NOT NULL, 
-    Email varchar(255) NOT NULL,
-    Adminrole boolean NOT NULL,
-    Budget DECIMAL NOT NULL,
-    BudgetLimit BOOLEAN NOT NULL
+  GebruikerId INTEGER auto_increment PRIMARY KEY,
+  Naam varchar(255) NOT NULL UNIQUE ,
+  Wachtwoord varchar(255) NOT NULL, 
+  Email varchar(255) NOT NULL,
+  Adminrole boolean NOT NULL,
+  Budget DECIMAL NOT NULL,
+  BudgetLimit BOOLEAN NOT NULL
 );
 
 CREATE TABLE Product(
@@ -70,11 +70,11 @@ CREATE TABLE HeeftBesteld(
 
 CREATE TABLE HeeftEenBestelling
 (
-    BestellingId INTEGER NOT NULL,
-    GebruikerId  INTEGER NOT NULL,
-    FOREIGN KEY (BestellingId) REFERENCES Bestelling (BestellingId),
-    FOREIGN KEY (GebruikerId) REFERENCES Gebruiker (GebruikerId),
-    CONSTRAINT PK_HeeftEenBestelling PRIMARY KEY (BestellingId,GebruikerId)
+  BestellingId INTEGER NOT NULL,
+  GebruikerId  INTEGER NOT NULL,
+  FOREIGN KEY (BestellingId) REFERENCES Bestelling (BestellingId),
+  FOREIGN KEY (GebruikerId) REFERENCES Gebruiker (GebruikerId),
+  CONSTRAINT PK_HeeftEenBestelling PRIMARY KEY (BestellingId,GebruikerId)
 );
 
 
