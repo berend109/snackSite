@@ -9,8 +9,6 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
-    <Folder Include="Pages\Inloggen" />
-    <Folder Include="Pages\Repository" />
   </ItemGroup>
 
   <ItemGroup>
