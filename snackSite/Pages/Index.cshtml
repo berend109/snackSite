@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center ">
+<div class="text-center flex-column pt-4 pb-4">
     <div class="row height d-flex justify-content-center align-items-center">
 
         <div class="col-md-8">
@@ -13,21 +13,315 @@
                 <i class="fa fa-search"></i>
                 
                 <input type="text" class="form-control" style="float: left; width: 90%" placeholder="What will you be snacking today?" />
-                <button class="btn btn-primary" style="float: right; width: 10%">Search</button>
-                    
-                
+                <button class="btn btn-primary" style="float: right; width: 10%">Search</button>   
             </div>
-
         </div>
 
     </div>
-    <div class="lunch_bestel_item">
-        <div class="card lunch_bestel_item" style="width: 18rem;">
-            <img class="card-img-top" src="../wwwroot/images/Kapsalon_dutch_meal.png" alt="Card image cap"/>
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="row">
+        <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
+            <div class="card lunch_bestel_item" style="width: 18rem;">
+                <img class="card-img-top bg-primary text-white h-50 overflow-hidden" src="images/Frikandel.png" alt="Frikandel" />
+                <div class="card-body border-top h-50">
+                    <h5 class="card-title justify-content-start">Frikandel</h5>
+                    <p class="card-text">De goede oude vertrouwde frikandel. Vers gefrituurd. Met uitjes en saus of juist naturel. Altijd lekker. </p>
+                    <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
+                    <div class="collapse mt-3" id="Item1"> <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
+                        <div class="m-2 border-top border-bottom">
+                            <!-- Subkeuzes -->
+                            <div class="row mt-2 mb-2" aria-label="brood selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Broodje</p>
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2 mb-2" aria-label="Sauce selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Sauce</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>none</option>
+                                        <option value="1">Ketchup</option>
+                                        <option value="2">Mayo</option>
+                                        <option value="3">SpeciaalSause</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Aanbieder</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>-</option>
+                                        <option value="1">wijn&spice</option>
+                                        <option value="2">Snackbar de malle molen</option>
+                                        <option value="3">Smullers</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col text-start h3 ">Total:</div>
+                            <div class=" col text-end h3 ">€5.20</div>
+                        </div>
+                        <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Toevoegen
+                            <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container pt-4 w-auto">
+            <div class="card lunch_bestel_item" style="width: 18rem;">
+                <img class="card-img-top bg-primary text-white h-50" src="images/Frikandel.png" alt="Frikandel" />
+                <div class="card-body border-top h-50">
+                    <h5 class="card-title justify-content-start ">Frikandel</h5>
+                    <p class="card-text">De goede oude vertrouwde frikandel. Vers gefrituurd. Met uitjes en saus of juist naturel. Altijd lekker. </p>
+                    <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item2" aria-expanded="false" aria-controls="collapseExample">+</button>
+                    <div class="collapse mt-3" id="Item2">
+                        <div class="m-2 border-top border-bottom">
+                            <!-- Subkeuzes -->
+                            <div class="row mt-2 mb-2" aria-label="brood selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Broodje</p>
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2 mb-2" aria-label="Sauce selectie">
+                               <div class="col-6">
+                                    <p class="h5 pt-1">Sauce</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select" >
+                                        <option selected>none</option>
+                                        <option value="1">Ketchup</option>
+                                        <option value="2">Mayo</option>
+                                        <option value="3">SpeciaalSause</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Aanbieder</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>-</option>
+                                        <option value="1">wijn&spice</option>
+                                        <option value="2">Snackbar de malle molen</option>
+                                        <option value="3">Smullers</option>
+                                    </select>
+                                </div>
+                            </div>
+    
+    
+                      </div>
+                      <div class=" row">
+                          <div class=" col text-start h3 ">Total:</div>
+                           <div class=" col text-end h3 ">€5.20</div>
+                       </div>
+                       <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          Toevoegen
+                           <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                           </svg>
+                       </button>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
+            <div class="card lunch_bestel_item" style="width: 18rem;">
+                <img class="card-img-top bg-primary text-white h-50" src="images/Frikandel.png" alt="Frikandel" />
+                <div class="card-body border-top h-50">
+                    <h5 class="card-title justify-content-start ">Frikandel</h5>
+                    <p class="card-text">De goede oude vertrouwde frikandel. Vers gefrituurd. Met uitjes en saus of juist naturel. Altijd lekker. </p>
+                    <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item3" aria-expanded="false" aria-controls="collapseExample">+</button>
+                    <div class="collapse mt-3" id="Item3">
+                        <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
+                        <div class="m-2 border-top border-bottom">
+                            <!-- Subkeuzes -->
+                            <div class="row mt-2 mb-2" aria-label="brood selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Broodje</p>
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2 mb-2" aria-label="Sauce selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Sauce</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>none</option>
+                                        <option value="1">Ketchup</option>
+                                        <option value="2">Mayo</option>
+                                        <option value="3">SpeciaalSause</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Aanbieder</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>-</option>
+                                        <option value="1">wijn&spice</option>
+                                        <option value="2">Snackbar de malle molen</option>
+                                        <option value="3">Smullers</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col text-start h3 ">Total:</div>
+                            <div class=" col text-end h3 ">€5.20</div>
+                        </div>
+                        <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Toevoegen
+                            <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
+            <div class="card lunch_bestel_item" style="width: 18rem;">
+                <img class="card-img-top bg-primary text-white h-50" src="images/Frikandel.png" alt="Frikandel" />
+                <div class="card-body border-top h-50">
+                    <h5 class="card-title justify-content-start ">Frikandel</h5>
+                    <p class="card-text">De goede oude vertrouwde frikandel. Vers gefrituurd. Met uitjes en saus of juist naturel. Altijd lekker. </p>
+                    <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item4" aria-expanded="false" aria-controls="collapseExample">+</button>
+                    <div class="collapse mt-3" id="Item4">
+                        <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
+                        <div class="m-2 border-top border-bottom">
+                            <!-- Subkeuzes -->
+                            <div class="row mt-2 mb-2" aria-label="brood selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Broodje</p>
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2 mb-2" aria-label="Sauce selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Sauce</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>none</option>
+                                        <option value="1">Ketchup</option>
+                                        <option value="2">Mayo</option>
+                                        <option value="3">SpeciaalSause</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Aanbieder</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>-</option>
+                                        <option value="1">wijn&spice</option>
+                                        <option value="2">Snackbar de malle molen</option>
+                                        <option value="3">Smullers</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col text-start h3 ">Total:</div>
+                            <div class=" col text-end h3 ">€5.20</div>
+                        </div>
+                        <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Toevoegen
+                            <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
+            <div class="card lunch_bestel_item" style="width: 18rem;">
+                <img class="card-img-top bg-primary text-white h-50" src="images/Frikandel.png" alt="Frikandel" />
+                <div class="card-body border-top h-50">
+                    <h5 class="card-title justify-content-start ">Frikandel</h5>
+                    <p class="card-text">De goede oude vertrouwde frikandel. Vers gefrituurd. Met uitjes en saus of juist naturel. Altijd lekker. </p>
+                    <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item5" aria-expanded="false" aria-controls="collapseExample">+</button>
+                    <div class="collapse mt-3" id="Item5">
+                        <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
+                        <div class="m-2 border-top border-bottom">
+                            <!-- Subkeuzes -->
+                            <div class="row mt-2 mb-2" aria-label="brood selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Broodje</p>
+                                </div>
+                                <div class="col-6">
+                                    <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
+                                </div>
+                            </div>
+
+                            <div class="row mt-2 mb-2" aria-label="Sauce selectie">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Sauce</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>none</option>
+                                        <option value="1">Ketchup</option>
+                                        <option value="2">Mayo</option>
+                                        <option value="3">SpeciaalSause</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
+                                <div class="col-6">
+                                    <p class="h5 pt-1">Aanbieder</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select">
+                                        <option selected>-</option>
+                                        <option value="1">wijn&spice</option>
+                                        <option value="2">Snackbar de malle molen</option>
+                                        <option value="3">Smullers</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" row">
+                            <div class=" col text-start h3 ">Total:</div>
+                            <div class=" col text-end h3 ">€5.20</div>
+                        </div>
+                        <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Toevoegen
+                            <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

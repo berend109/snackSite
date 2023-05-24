@@ -9,6 +9,14 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <Content Remove="wwwroot\images\Frikandel.png" />
+    <Content Remove="wwwroot\images\icons\cart-fill.svg" />
+    <Content Remove="wwwroot\images\Kapsalon_dutch_meal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\images\Frikandel.png" />
+    <None Include="wwwroot\images\icons\cart-fill.svg" />
+    <None Include="wwwroot\images\Kapsalon_dutch_meal.png" />
   </ItemGroup>
 
   <ItemGroup>
