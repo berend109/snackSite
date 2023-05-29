@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\Inloggen" />
-    <Folder Include="Pages\Repository" />
   </ItemGroup>
 
 </Project>
