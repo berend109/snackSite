@@ -1,0 +1,17 @@
+﻿@page "{ProductId:int}"
+@model snackSite.Pages.CRUDProducten.Delete
+
+@{
+    ViewData["Title"] = "Verwijderen";
+}
+
+<div class="row">
+    <div class="col">
+        <h1>Wil je dit boek echt verwijderen @(Model.Producten.)?</h1>
+        <hr>
+        <form method="POST">
+            <button asp-page-handler="Delete" class="btn btn-success m-2 w-50">Ja</button>
+            <button asp-page-handler="Cancel" class="btn btn-danger m-2 w-50">Nee</button>
+        </form>
+    </div>
+</div>

@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS SnackSite;
 
 USE SnackSite;
 
-DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftOpties CASCADE;
+DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftOpties, HeeftEenProduct CASCADE;
 
 create table Gebruiker (
     GebruikerId INTEGER auto_increment PRIMARY KEY,
@@ -10,7 +10,7 @@ create table Gebruiker (
     Wachtwoord varchar(255) NOT NULL, 
     Email varchar(255) NOT NULL,
     Adminrole boolean NOT NULL,
-    Budget DECIMAL NOT NULL,
+    Budget DECIMAL(10,2) NOT NULL,
     BudgetLimit BOOLEAN NOT NULL
 );
 
@@ -18,7 +18,7 @@ CREATE TABLE Product(
   ProductId INTEGER auto_increment PRIMARY KEY,
   ProductNaam varchar(255) NOT NULL,
   Productbeschrijving varchar(255),
-  ProductPrijs DECIMAL NOT NULL,
+  ProductPrijs DECIMAL(10,2) NOT NULL,
   ProductCategorie VARCHAR(255) NOT NULL,
   Vegan BOOLEAN,
   Vega BOOLEAN
@@ -28,7 +28,7 @@ CREATE TABLE Bestelling (
   BestellingId INTEGER auto_increment PRIMARY KEY,
   ProductId INTEGER NOT NULL,
   Totaal DECIMAL,
-  Prijs DECIMAL,
+  Prijs DECIMAL(10,2),
   FOREIGN KEY (ProductId) REFERENCES Product (ProductId)             
 );
 
@@ -161,3 +161,5 @@ VALUES ('Chinees Restaurant Lotus');
  
 INSERT INTO Aanbieder (Naam)
 VALUES ('Thais Eethuis Siam');
+
+

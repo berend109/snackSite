@@ -2,7 +2,7 @@
 
 namespace snackSite.Models;
 
-public class Producten
+public class Product
 {
     [Required]
     public int ProductId { get; set; }

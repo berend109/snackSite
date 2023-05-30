@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace snackSite.Pages;
+namespace snackSite.Pages.CRUDProducten;
 
-public class Create : PageModel
+public class Update : PageModel
 {
     public void OnGet()
     {

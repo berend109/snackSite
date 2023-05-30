@@ -1,6 +1,6 @@
 ﻿@page
 @using snackSite.Models
-@model snackSite.Pages.CrudProducten
+@model snackSite.Pages.CRUDProducten.Index
 
 
 
@@ -12,13 +12,13 @@
         <hr>
         <table class="table table-striped">
             <tbody>
-            @foreach (var category in Model.Producten)
+            @foreach (var producten in Model.Producten)
             {
                 <tr>
-                    <td>@category.Name</td>
+                    <td>@producten.ProductNaam</td>
                     <td>
-                        <a asp-page="@nameof(Delete)" asp-route-categoryId="@.CategoryId" class="btn btn-danger">Delete</a> |
-                        <a asp-page="@nameof(Update)" asp-route-categoryId="@Producten.ProductId" class="btn btn-info">Update</a>
+                        <a asp-page="@nameof(Delete)" asp-route-categoryId="@producten.ProductId" class="btn btn-danger">Delete</a> |
+                        <a asp-page="@nameof(Update)" asp-route-categoryId="@producten.ProductId" class="btn btn-info">Update</a>
                     </td>
                 </tr>
             }
