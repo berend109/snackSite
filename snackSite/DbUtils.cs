@@ -5,6 +5,10 @@ namespace snackSite
 {
     public class DbUtils
     {
+        public DbUtils()
+        {
+        }
+
         public IDbConnection GetDbConnection()
         {
             string connectionString = Program.Configuration
