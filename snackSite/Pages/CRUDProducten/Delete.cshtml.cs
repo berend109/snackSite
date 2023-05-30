@@ -7,11 +7,12 @@ namespace snackSite.Pages.CRUDProducten;
 
 public class Delete : PageModel
 {
-
-    public IEnumerable<Product> Producten { get; set; } = null!;
+    public Product Product { get; set; } = null!;
+ 
     public void OnGet([FromRoute] int ProductId)
     {
-        Producten = new ProductenRepository().Delete(ProductId);
+        Product = new ProductenRepository().Get(ProductId);
+
     }
 
     public IActionResult OnPostDelete([FromRoute] int ProductId)

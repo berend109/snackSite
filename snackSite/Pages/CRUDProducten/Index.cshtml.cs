@@ -6,7 +6,7 @@ namespace snackSite.Pages.CRUDProducten;
 
 public class Index : PageModel
 {
-    public IEnumerable<Product> Producten { get; set; } = null!;
+    public IEnumerable <Product> Producten { get; set; } = null!;
     public void OnGet()
     {
         Producten = new ProductenRepository().GetProduct();
