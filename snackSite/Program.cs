@@ -23,3 +23,12 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+partial class Program
+{
+    public static IConfiguration Configuration
+    {
+        get;
+        set;
+    } = null!;
+}
