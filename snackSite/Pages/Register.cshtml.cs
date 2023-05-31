@@ -10,6 +10,7 @@ public class Register : PageModel
 {
     [BindProperty]
     public User user { get; set; }
+
     public void OnGet()
     {
 

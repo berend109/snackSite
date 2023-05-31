@@ -9,7 +9,7 @@ namespace snackSite.Repositories
     {
         private IDbConnection GetConnection()
         {
-            return new DbUtils().GetConnection();
+            return new DbUtils().GetDbConnection();
         }
 
         // add user after register
@@ -21,17 +21,17 @@ namespace snackSite.Repositories
             string sql = @"SQL STRING";
 
             var parameters = new { Name = username, Password = password };
-            var user = connection.QuerySingle<user>(sql, parameters);
+            var user = connection.QuerySingle<User>(sql, parameters);
             return user;
         }
 
-        public UserRepository Get(string email)
+        public User Get(string email)
         {
             using var connection = GetConnection();
 
             // TODO: create sql string to get user by email
             string sql = @"SQL STRING";
-            var parameters = new { Email = email };
+            var parameters = new { email };
 
             var user = connection.QuerySingleOrDefault<User>(sql, parameters);
             return user;
