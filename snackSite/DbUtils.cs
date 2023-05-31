@@ -11,7 +11,7 @@ namespace snackSite
 
         public IDbConnection GetDbConnection()
         {
-            string connectionString = Program.Configuration.GetConnectionString("snackSite")!;
+            string connectionString = Program.Configuration.GetConnectionString("DefaultConnection")!;
 
             return new MySqlConnection(connectionString);
         }

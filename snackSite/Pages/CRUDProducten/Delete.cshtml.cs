@@ -9,15 +9,15 @@ public class Delete : PageModel
 {
     public Product Product { get; set; } = null!;
  
-    public void OnGet([FromRoute] int ProductId)
+    public void OnGet([FromRoute] int productId)
     {
-        Product = new ProductenRepository().Get(ProductId);
+        Product = new ProductenRepository().Get(productId);
 
     }
 
-    public IActionResult OnPostDelete([FromRoute] int ProductId)
+    public IActionResult OnPostDelete([FromRoute] int productId)
     {
-        bool success = new ProductenRepository().Delete(ProductId);
+        bool success = new ProductenRepository().Delete(productId);
         return RedirectToPage(nameof(Index));
     }
 

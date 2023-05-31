@@ -9,10 +9,10 @@ public class Update : PageModel
 {
     public Product Product { get; set; } = null!;
     
-    public void OnGet(int ProductId)
+    public void OnGet(int productId)
     {
 
-        Product = new ProductenRepository().Get(ProductId);
+        Product = new ProductenRepository().Get(productId);
     }
 
     public IActionResult OnPost(Product product)
