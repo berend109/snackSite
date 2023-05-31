@@ -9,7 +9,7 @@ namespace snackSite.Pages;
 public class Register : PageModel
 {
     [BindProperty]
-    public User user { get; set; }
+    public User? user { get; set; }
 
     public void OnGet()
     {
@@ -18,16 +18,14 @@ public class Register : PageModel
 
     public IActionResult OnPost()
     {
-        User existingUser = new UserRepository().Get(user.Email);
+        User existingUser = UserRepository.Get(user.Email);
 
         if (existingUser == null && user.Password == user.Password2)
         {
-            new UserRepository().Add(user.Name, Hasj.HashPassword(user.Password));
+            UserRepository.Add(user.Name, Hasj.HashPassword(user.Password));
             return RedirectToPage("/Index");
         }
-        else
-        {
-            return RedirectToPage("/Register");
-        }
+
+        return RedirectToPage("/Register");
     }
 }
