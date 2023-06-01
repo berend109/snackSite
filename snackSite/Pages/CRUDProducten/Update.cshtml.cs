@@ -11,8 +11,7 @@ public class Update : PageModel
     
     public void OnGet(int productId)
     {
-
-        Product = new ProductenRepository().Get(productId);
+         Product = new ProductenRepository().Get(productId);
     }
 
     public IActionResult OnPost(Product product)

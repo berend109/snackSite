@@ -1,25 +1,31 @@
-﻿@page
+﻿@page "{productId:int}"
 @model snackSite.Pages.CRUDProducten.Update
 
 <div class="row">
     <div class="col">
         <h1>Update Category</h1>
         <form method="POST">
-            <label asp-for="Product.ProductNaam">Name:</label>
-            <input asp-for="Product.ProductNaam" class="form-control"/>
-            <span asp-validation-for="Product.ProductNaam"></span>
-
-            <label asp-for="Product.Productbeschrijving">Beschrijving:</label>
-            <input asp-for="Product.Productbeschrijving" class="form-control"/>
-            <span asp-validation-for="Product.Productbeschrijving"></span>
-
-            <label asp-for="Product.ProductPrijs">Prijs:</label>
-            <input asp-for="Product.ProductPrijs" class="form-control"/>
-            <span asp-validation-for="Product.ProductPrijs"></span>
-
-            <label asp-for="Product.ProductCategorie">Categorie:</label>
-            <input asp-for="Product.ProductCategorie" class="form-control"/>
-            <span asp-validation-for="Product.ProductCategorie"></span>
+            <input type="hidden" asp-for="@Model.Product.ProductId"/>
+            <div class="form-group">
+                <label asp-for="Product.ProductNaam">Name:</label>
+                <input asp-for="Product.ProductNaam" class="form-control"/>
+                <span asp-validation-for="Product.ProductNaam"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Productbeschrijving">Beschrijving:</label>
+                <input asp-for="Product.Productbeschrijving" class="form-control"/>
+                <span asp-validation-for="Product.Productbeschrijving"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.ProductPrijs">Prijs:</label>
+                <input asp-for="Product.ProductPrijs" class="form-control"/>
+                <span asp-validation-for="Product.ProductPrijs"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.ProductCategorie">Categorie:</label>
+                <input asp-for="Product.ProductCategorie" class="form-control"/>
+                <span asp-validation-for="Product.ProductCategorie"></span>
+            </div>
             
             <div class="mt-3">
                 <button type="submit" class="btn btn-success">Update</button>
