@@ -1,0 +1,46 @@
+﻿@page
+@model snackSite.Pages.CRUDOPTIES.Index
+
+<div class="row">
+    <div class="col">
+        <h1>Display opties</h1>
+
+        <a asp-page="@nameof(Create)" class="btn btn-primary">Create New Category</a>
+        <hr>
+        <table class="table table-striped">
+            <tbody>
+            <thead>
+            <tr>
+                <th style="text-align: justify">OptieID</th>
+                <th style="text-align: justify">Optie</th>
+                <th style="text-align: justify">Beschrijving</th>
+                <th style="text-align: justify">Categorie</th>
+                <th style="text-align: justify">Prijs<th/>
+                
+               
+
+            </tr>
+            </thead>
+            <tbody>
+
+            @foreach (var Optie in Model.Opties)
+            {
+                <tr>
+                    <td>@Optie.OptieId</td>
+                    <td>@Optie.OptieNaam</td>
+                    <td>@Optie.OptieBeschrijving</td>
+                    <td>@Optie.OptieCategorie</td>
+                    <td>@Optie.OptiePrijs</td>
+                    
+                    
+                    <td>
+                        <a asp-page="@nameof(Delete)" asp-route-OptieId="@Optie.OptieId" class="btn btn-danger">Delete</a> |
+                        <a asp-page="@nameof(Update)" asp-route-OptieId="@Optie.OptieId" class="btn btn-info">Update</a>
+                    </td>
+                </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+</div>
