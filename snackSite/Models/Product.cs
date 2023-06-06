@@ -13,10 +13,13 @@ public class Product
     
     [Required, Range(0, 99.99)]
     public decimal ProductPrijs { get; set; }
-    
+    [Required]
     public string ProductCategorie { get; set; }
     
     public bool Vegan { get; set; }
     
     public bool Vega { get; set; }
+    
+    public List<Optie> Opties { get; set; } = new List<Optie>();
+
 }

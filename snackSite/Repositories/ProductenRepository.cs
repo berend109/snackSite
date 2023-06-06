@@ -62,5 +62,7 @@ public class ProductenRepository
         using var connection = GetConnection();
         var updatedCategory = connection.QuerySingle<Product>(sql, product );
         return updatedCategory;
+        var updatedProduct = connection.QuerySingle<Product>(sql, product);
+        return updatedProduct;
     }
 }

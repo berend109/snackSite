@@ -3,16 +3,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using snackSite.Models;
 using snackSite.Repositories;
 
-namespace snackSite.Pages.CRUDProducten;
+namespace snackSite.Pages.CRUDOPTIES;
 
 public class Create : PageModel
+
 {
-    [BindProperty] public Product Product { get; set; } = null!;
-    
+    [BindProperty ]public Optie Optie { get; set; } = null!;
     public void OnGet()
     {
+        
     }
-
     public IActionResult OnPost()
     {
         if (!ModelState.IsValid)
@@ -20,10 +20,9 @@ public class Create : PageModel
             return Page();
         }
         
-        var createdProduct = new ProductenRepository().Add(Product);
+        var createdOptie = new OptieRepository().Add(Optie);
         return RedirectToPage("../Admin");
     }
-
     public IActionResult OnPostCancel()
     {
         return Redirect("../Admin");

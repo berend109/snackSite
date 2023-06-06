@@ -3,25 +3,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using snackSite.Models;
 using snackSite.Repositories;
 
-namespace snackSite.Pages.CRUDProducten;
+namespace snackSite.Pages.CRUDOPTIES;
 
 public class Update : PageModel
 {
-    public Product Product { get; set; } = null!;
+    public Optie Optie { get; set; } = null!;
     
-    public void OnGet(int productId)
+    public void OnGet(int optieId)
     {
-         Product = new ProductenRepository().Get(productId);
+        Optie = new OptieRepository().Get(optieId);
     }
 
-    public IActionResult OnPost(Product product)
+    public IActionResult OnPost(Optie optie)
     {
         if (!ModelState.IsValid)
         {
             return Page();
         }
 
-        var updatedProduct = new ProductenRepository().Update(product);
+        var updatedOptie = new OptieRepository().Update(optie);
 
         return RedirectToPage("../Admin");
     }
