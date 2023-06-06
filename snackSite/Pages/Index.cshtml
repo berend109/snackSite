@@ -14,18 +14,19 @@
                     <div class="search align-items-left">
                         <i class="fa fa-search"></i>
 
-                        <input type="text" class="form-control" style="float: left; width: 90%" placeholder="What will you be snacking today?" />
+                        <input type="text" class="form-control" style="float: left; width: 90%" placeholder="What will you be snacking today?"/>
                         <button class="btn btn-primary" style="float: right; width: 10%">Search</button>
                     </div>
                 </div>
             </div>
             <!-- Cards -->
+            
             <div class="row">
                 <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
                     <div class="card lunch_bestel_item shadow" style="width: 18rem;">
-                        <img class=" object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill;" alt="" />
+                        <img class=" object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill;" alt=""/>
                         <div class="position-relative card-body border-top" style="height: 12rem">
-                            <h5 class="card-title justify-content-start">Kapsalon</h5>
+                            <h5 class="card-title justify-content-start"></h5>
                             <p class="card-text">Lekkere kapsalon. Met friet, uitjes rawkost en nog veel meer! </p>
                             <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
                         </div>
@@ -33,19 +34,10 @@
                             <div class="collapse mt-3" id="Item1">
                                 <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
                                 <div class="m-2 border-top border-bottom">
-                                    <!-- Subkeuzes -->
-                                    <div class="row mt-2 mb-2" aria-label="brood selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Broodje</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
-                                        </div>
-                                    </div>
-
+                                    <!-- Subkeuzes opties -->
                                     <div class="row mt-2 mb-2" aria-label="Sauce selectie">
                                         <div class="col-6">
-                                            <p class="h5 pt-1">Sauce</p>
+                                            <p class="h5 pt-1">Optie</p>
                                         </div>
                                         <div class="col-6">
                                             <select class="form-select">
@@ -56,6 +48,7 @@
                                             </select>
                                         </div>
                                     </div>
+                                     <!-- Subkeuzes Aanbieder -->
                                     <div class="row mt-2 mb-2" aria-label="Aanbieder">
                                         <div class="col-6">
                                             <p class="h5 pt-1">Aanbieder</p>
@@ -77,259 +70,7 @@
                                 <button class=" btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                     Toevoegen
                                     <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto  ">
-                    <div class="card lunch_bestel_item shadow" style="width: 18rem;">
-                        <img class="object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill;" alt="Kapsalon" />
-                        <div class="card-body border-top" style="height: 12rem">
-                            <h5 class="card-title justify-content-start">Kapsalon</h5>
-                            <p class="card-text">Lekkere kapsalon. Met friet, uitjes rawkost en nog veel meer! </p>
-                            <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
-                        </div>
-                        <div class="p-3">
-                            <div class="collapse mt-3" id="Item1">
-                                <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
-                                <div class="m-2 border-top border-bottom">
-                                    <!-- Subkeuzes -->
-                                    <div class="row mt-2 mb-2" aria-label="brood selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Broodje</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-2 mb-2" aria-label="Sauce selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Sauce</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>none</option>
-                                                <option value="1">Ketchup</option>
-                                                <option value="2">Mayo</option>
-                                                <option value="3">SpeciaalSause</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2 mb-2" aria-label="Aanbieder">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Aanbieder</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>-</option>
-                                                <option value="1">wijn&spice</option>
-                                                <option value="2">Snackbar de malle molen</option>
-                                                <option value="3">Smullers</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" row">
-                                    <div class=" col text-start h3 ">Total:</div>
-                                    <div class=" col text-end h3 ">€5.20</div>
-                                </div>
-                                <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Toevoegen
-                                    <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto  ">
-                    <div class="card lunch_bestel_item shadow" style="width: 18rem;">
-                        <img class="object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill;" alt="Kapsalon" />
-                        <div class="card-body border-top" style="height: 12rem">
-                            <h5 class="card-title justify-content-start">Kapsalon</h5>
-                            <p class="card-text">Lekkere kapsalon. Met friet, uitjes rawkost en nog veel meer! </p>
-                            <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
-                        </div>
-                        <div class="p-3">
-                            <div class="collapse mt-3" id="Item1">
-                                <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
-                                <div class="m-2 border-top border-bottom">
-                                    <!-- Subkeuzes -->
-                                    <div class="row mt-2 mb-2" aria-label="brood selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Broodje</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-2 mb-2" aria-label="Sauce selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Sauce</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>none</option>
-                                                <option value="1">Ketchup</option>
-                                                <option value="2">Mayo</option>
-                                                <option value="3">SpeciaalSause</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2 mb-2" aria-label="Aanbieder">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Aanbieder</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>-</option>
-                                                <option value="1">wijn&spice</option>
-                                                <option value="2">Snackbar de malle molen</option>
-                                                <option value="3">Smullers</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" row">
-                                    <div class=" col text-start h3 ">Total:</div>
-                                    <div class=" col text-end h3 ">€5.20</div>
-                                </div>
-                                <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Toevoegen
-                                    <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto  ">
-                    <div class="card lunch_bestel_item shadow" style="width: 18rem;">
-                        <img class="object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill;" alt="Kapsalon" />
-                        <div class="card-body border-top" style="height: 12rem">
-                            <h5 class="card-title justify-content-start">Kapsalon</h5>
-                            <p class="card-text">Lekkere kapsalon. Met friet, uitjes rawkost en nog veel meer! </p>
-                            <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
-                        </div>
-                        <div class="p-3">
-                            <div class="collapse mt-3" id="Item1">
-                                <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
-                                <div class="m-2 border-top border-bottom">
-                                    <!-- Subkeuzes -->
-                                    <div class="row mt-2 mb-2" aria-label="brood selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Broodje</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-2 mb-2" aria-label="Sauce selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Sauce</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>none</option>
-                                                <option value="1">Ketchup</option>
-                                                <option value="2">Mayo</option>
-                                                <option value="3">SpeciaalSause</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2 mb-2" aria-label="Aanbieder">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Aanbieder</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>-</option>
-                                                <option value="1">wijn&spice</option>
-                                                <option value="2">Snackbar de malle molen</option>
-                                                <option value="3">Smullers</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" row">
-                                    <div class=" col text-start h3 ">Total:</div>
-                                    <div class=" col text-end h3 ">€5.20</div>
-                                </div>
-                                <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Toevoegen
-                                    <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto  ">
-                    <div class="card lunch_bestel_item shadow" style="width: 18rem;">
-                        <img class="object-fit-fill border ronded bg-primary text-white overflow-hidden" src="" style="height: 12rem; object-fit: fill;" alt="Kapsalon" />
-                        <div class="card-body border-top" style="height: 12rem">
-                            <h5 class="card-title justify-content-start">Kapsalon</h5>
-                            <p class="card-text">Lekkere kapsalon. Met friet, uitjes rawkost en nog veel meer! </p>
-                            <button class="btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
-                        </div>
-                        <div class="p-3">
-                            <div class="collapse mt-3" id="Item1">
-                                <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
-                                <div class="m-2 border-top border-bottom">
-                                    <!-- Subkeuzes -->
-                                    <div class="row mt-2 mb-2" aria-label="brood selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Broodje</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <input class="form-check-input p-3" type="checkbox" value="" aria-label="wel of geen broodje">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-2 mb-2" aria-label="Sauce selectie">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Sauce</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>none</option>
-                                                <option value="1">Ketchup</option>
-                                                <option value="2">Mayo</option>
-                                                <option value="3">SpeciaalSause</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2 mb-2" aria-label="Aanbieder">
-                                        <div class="col-6">
-                                            <p class="h5 pt-1">Aanbieder</p>
-                                        </div>
-                                        <div class="col-6">
-                                            <select class="form-select">
-                                                <option selected>-</option>
-                                                <option value="1">wijn&spice</option>
-                                                <option value="2">Snackbar de malle molen</option>
-                                                <option value="3">Smullers</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" row">
-                                    <div class=" col text-start h3 ">Total:</div>
-                                    <div class=" col text-end h3 ">€5.20</div>
-                                </div>
-                                <button class="btn btn-primary w-75 fs-4 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                    Toevoegen
-                                    <svg xmlns="images/icons" width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                     </svg>
                                 </button>
                             </div>
@@ -338,8 +79,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+</div>
     <!-- winkelmandje -->
     <div class="flex-shrink-0 border-start border-end bg-white collapse shadow" id="winkelmand" style="width: 40%">
         <div class="d-flex flex-row justify-content-between ps-5 pe-5 pt-4">
