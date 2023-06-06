@@ -24,14 +24,6 @@ CREATE TABLE Product(
                         Vega BOOLEAN
 );
 
-CREATE TABLE Bestelling (
-                            BestellingId INTEGER auto_increment PRIMARY KEY,
-                            ProductId INTEGER NOT NULL,
-                            Totaal DECIMAL,
-                            Prijs DECIMAL(10,2),
-                            FOREIGN KEY (ProductId) REFERENCES Product (ProductId)
-);
-
 CREATE TABLE Opties(
                        OptieId INTEGER auto_increment PRIMARY KEY,
                        OptieNaam VARCHAR(255) NOT NULL,
@@ -39,6 +31,18 @@ CREATE TABLE Opties(
                        OptiePrijs DECIMAL(10,2) NOT NULL,
                        OptieCategorie varchar(255) NOT NULL
 );
+
+CREATE TABLE Bestelling (
+                            BestellingId INTEGER auto_increment PRIMARY KEY,
+                            ProductId INTEGER NOT NULL,
+                            OptieId INTEGER NOT NULL,
+                            TotaalPrijs DECIMAL(10,2),
+                            Prijs DECIMAL(10,2),
+                            FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
+                            FOREIGN KEY (OptieId) REFERENCES Opties (OptieId)
+);
+
+
 
 CREATE TABLE Aanbieder(
                           AanbiederId INTEGER auto_increment PRIMARY KEY,
@@ -113,22 +117,6 @@ VALUES ('Yoghurt', 'Romige yoghurt', 2.49, 'Zuivel', false, true);
 INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Vegan, Vega)
 VALUES ('Quinoa', 'Voedzame quinoa-granen', 3.99, 'Granen', true, true);
 
--- TABLE Bestelling
-INSERT INTO Bestelling (ProductId, totaal, prijs)
-VALUES (1, 3, 9.99);
-
-INSERT INTO Bestelling (ProductId, totaal, prijs)
-VALUES (2, 5, 4.95);
-
-INSERT INTO Bestelling (ProductId, totaal, prijs)
-VALUES (3, 2, 12.50);
-
-INSERT INTO Bestelling (ProductId, totaal, prijs)
-VALUES (4, 1, 2.99);
-
-INSERT INTO Bestelling (ProductId, totaal, prijs)
-VALUES (5, 4, 7.50);
-
 -- TABLE Opties 
 
 INSERT INTO Opties (OptieNaam, OptieBeschrijving, OptiePrijs, OptieCategorie)
@@ -145,6 +133,24 @@ VALUES ('Pittig', 'Maak de snack pittiger', 0.50, 'FrituurSnack');
 
 INSERT INTO Opties (OptieNaam, OptieBeschrijving, OptiePrijs, OptieCategorie)
 VALUES ('Extra toppings', 'Voeg extra toppings toe aan de snack', 0.75, 'FrituurSnack');
+
+-- TABLE Bestelling
+INSERT INTO Bestelling (ProductId, OptieId,totaal, prijs)
+VALUES (1, 3, 1, 9.99);
+
+INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
+VALUES (2, 5, 2, 4.95);
+
+INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
+VALUES (3, 2, 3, 12.50);
+
+INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
+VALUES (4, 1, 4, 2.99);
+
+INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
+VALUES (5, 4, 5, 7.50);
+
+
 
 -- TABLE Aanbieder 
 
