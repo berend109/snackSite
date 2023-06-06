@@ -8,10 +8,8 @@ public class ProductenRepository
 {
     private IDbConnection GetConnection()
     {
-        
         return new DbUtils().GetDbConnection();
     }
-    
     public Product Get(int productId)
     {
         string sql = "SELECT * FROM product WHERE ProductId = @productId";
@@ -62,7 +60,5 @@ public class ProductenRepository
         using var connection = GetConnection();
         var updatedCategory = connection.QuerySingle<Product>(sql, product );
         return updatedCategory;
-        var updatedProduct = connection.QuerySingle<Product>(sql, product);
-        return updatedProduct;
     }
 }
