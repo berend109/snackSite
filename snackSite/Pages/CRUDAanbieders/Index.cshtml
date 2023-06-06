@@ -1,0 +1,43 @@
+﻿@page
+@model snackSite.Pages.CRUDAanbieders.Index
+
+
+
+<div class="row">
+    <div class="col">
+        <h1>Display Categories</h1>
+
+        <a asp-page="@nameof(Create)" class="btn btn-primary">Create New Category</a>
+        <hr>
+        <table class="table table-striped">
+            <tbody>
+            <thead>
+                <tr>
+                    <th style="text-align: justify">ProductID</th>
+                    <th style="text-align: justify">Product</th>
+                    <th style="text-align: justify">Beschrijving</th>
+                    <th style="text-align: justify">Categorie</th>
+                    <th style="text-align: justify">Prijs
+                    <th />
+
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach (var aanbieders in Model.Aanbieders)
+            {
+                <tr>
+                        <td>@aanbieders.AanbiederId</td>
+                        <td>@aanbieders.Naam</td>
+
+                     <td>
+                            <a asp-page="@nameof(Delete)" asp-route-aanbiederId="@aanbieders.AanbiederId" class="btn btn-danger">Delete</a> |
+                            <a asp-page="@nameof(Update)" asp-route-aanbiederId="@aanbieders.AanbiederId" class="btn btn-info">Update</a>
+                     </td>
+               </tr>
+            }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@page
+@model snackSite.Pages.CRUDGebruikers.Create
+
+<div class="row">
+    <div class="col">
+        <h1>Create New Product</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label asp-for="Gebruiker.Naam">Name:</label>
+                <input asp-for="Gebruiker.Naam" class="form-control" />
+                <span asp-validation-for="Gebruiker.Naam"></span>
+
+                <label asp-for="Gebruiker.Wachtwoord">Wachtwoord:</label>
+                <input asp-for="Gebruiker.Wachtwoord" class="form-control" />
+                <span asp-validation-for="Gebruiker.Wachtwoord"></span>
+
+                <label asp-for="Gebruiker.Email">Email:</label>
+                <input asp-for="Gebruiker.Email" class="form-control" />
+                <span asp-validation-for="Gebruiker.Email"></span>
+
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <button asp-page-handler="Cancel" class="btn btn-danger">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
