@@ -31,11 +31,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/CrudProducten/Index">Crud Producten</a>
-
+                        <form class="d-flex" method="get">
+                            <input class="form-control me-2" type="text" name="searchTerm" placeholder="Search..."/>
+                            <button class="btn btn-success ms-2" type="submit">
+                                <img src="https://cdn.discordapp.com/attachments/1088033761607823412/1088039402707632148/search.png" style="width:20px;height:20px;"/>
+                            </button>
+                        </form>
                         <li class="nav-item">
 
                             <a class="nav-link text-dark" asp-area="" asp-page="/CrudOPTIES/Index">Crud Opties</a>
-
+                          </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Login">Inloggen</a>
 
 

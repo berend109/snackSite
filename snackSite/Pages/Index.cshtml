@@ -5,11 +5,36 @@
 	ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-	<h1 class="display-4">Welcome</h1>
-	<div class="d-grid gap-2 col-6 mx-auto">
-		<a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
-		<a class="nav-link text-dark" asp-area="" asp-page="/Register">Register</a>
-	</div>
-</div>
+<div class="col-md-9 offset-3 comic-section" xmlns="http://www.w3.org/1999/html">
+    <div class="row">
+        <!-- Show Products in cards -->
+        @foreach (var Product in Model.Producten)
+        {
+            <div class="card col-md-2 col-sm-3 mx-2 my-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@Product.ProductNaam</h5>
+                </div>
+                <img src="" class="card-img-top card-img mx-auto" >
+                <ul class="list-group list-group-flush mt-2">
+                    <li class="list-group-item">
+                        <strong>Beschrijving</strong> <br/>
+                        @Product.Productbeschrijving
 
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Categorie</strong> <br/>
+                        @Product.ProductCategorie
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Prijs</strong> <br/>
+                        @Product.ProductPrijs
+                    </li>
+
+                </ul>
+                <a class="btn btn-success card-link m-2">Toevoegen</a>
+
+            </div>
+        }
+
+    </div>
+</div>
