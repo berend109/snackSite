@@ -21,11 +21,11 @@ public class Create : PageModel
         }
         
         var createdProduct = new ProductenRepository().Add(Product);
-        return RedirectToPage(nameof(Index));
+        return RedirectToPage("../Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return Redirect(nameof(Index));
+        return Redirect("../Admin");
     }
 }

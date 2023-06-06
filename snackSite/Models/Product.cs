@@ -19,4 +19,7 @@ public class Product
     public bool Vegan { get; set; }
     
     public bool Vega { get; set; }
+    
+    public List<Optie> Opties { get; set; } = new List<Optie>();
+
 }

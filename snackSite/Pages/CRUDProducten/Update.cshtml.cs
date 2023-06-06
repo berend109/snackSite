@@ -23,11 +23,11 @@ public class Update : PageModel
 
         var updatedProduct = new ProductenRepository().Update(product);
 
-        return RedirectToPage(nameof(Index));
+        return RedirectToPage("../Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return RedirectToPage(nameof(Index));
+        return RedirectToPage("../Admin");
     }
 }

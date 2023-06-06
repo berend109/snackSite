@@ -21,10 +21,10 @@ public class Create : PageModel
         }
         
         var createdOptie = new OptieRepository().Add(Optie);
-        return RedirectToPage(nameof(Index));
+        return RedirectToPage("../Admin");
     }
     public IActionResult OnPostCancel()
     {
-        return Redirect(nameof(Index));
+        return Redirect("../Admin");
     }
 }
