@@ -18,11 +18,11 @@ public class Delete : PageModel
     public IActionResult OnPostDelete([FromRoute] int optieId)
     {
         bool success = new OptieRepository().Delete(optieId);
-        return RedirectToPage(nameof(CRUDOPTIES.Index));
+        return RedirectToPage("../Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return RedirectToPage(nameof(CRUDOPTIES.Index));
+        return RedirectToPage("../Admin");
     }
 }

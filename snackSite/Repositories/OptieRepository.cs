@@ -57,7 +57,7 @@ public class OptieRepository
                 OptiePrijs = @OptiePrijs,
                 OptieCategorie = @OptieCategorie
                 WHERE OptieId = @optieId;
-                SELECT * FROM optie WHERE OptieId = @optieId";
+                SELECT * FROM opties WHERE OptieId = @optieId";
 
         using var connection = GetConnection();
         var updatedOptie = connection.QuerySingle<Optie>(sql, optie);

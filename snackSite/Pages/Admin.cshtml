@@ -1,4 +1,5 @@
 ﻿@page
+@using snackSite.Pages.CRUDProducten
 @model snackSite.Pages.AdminModel
 @{
 }
@@ -14,7 +15,7 @@
 	</div>
 	<div class="mt-5 mb-5">
 		<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#admin-db">
-			<div class="h2 ">Databases</div>
+			<div class="h2 ">Tables</div>
 			<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
 		</a>
 		<div class="collapse" id="admin-db">
@@ -39,15 +40,91 @@
 				<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#Producten-db">
 					<div class="h2 ">Producten</div>
 					<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+
 				</a>
 				<div class="collapse" id="Producten-db">
-					Hier kun je uiteindelijk aanbieders toevoegen en verwijderen.
+					<a asp-page="CRUDProducten/Create" class="btn btn-primary">Create New Product</a>
+					<hr>
+					<table class="table table-striped">
+						<tbody>
+						<thead>
+						<tr>
+							<th style="text-align: justify">ProductID</th>
+							<th style="text-align: justify">Product</th>
+							<th style="text-align: justify">Beschrijving</th>
+							<th style="text-align: justify">Categorie</th>
+							<th style="text-align: justify">Prijs<th/>
+
+						</tr>
+						</thead>
+						<tbody>
+
+						@foreach (var producten in Model.Producten)
+						{
+							<tr>
+								<td>@producten.ProductId</td>
+								<td>@producten.ProductNaam</td>
+								<td>@producten.Productbeschrijving</td>
+								<td>@producten.ProductCategorie</td>
+								<td>@producten.ProductPrijs</td>
+
+
+								<td>
+									<a asp-page="CRUDProducten/Delete" asp-route-productId="@producten.ProductId" class="btn btn-danger">Delete</a> |
+									<a asp-page="CRUDProducten/Update" asp-route-productId="@producten.ProductId" class="btn btn-info">Update</a>
+								</td>
+							</tr>
+						}
+
+						</tbody>
+					</table>
 				</div>
+			
+			<!-- Opties database opties-->
+			<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#aanbieder-db">
+				<div class="h2 ">Opties</div>
+				<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+			</a>
+			<div class="collapse" id="aanbieder-db">
+				<a asp-page="CRUDOPTIES/Create" class="btn btn-primary">Create New Optie</a>
+				<hr>
+				<table class="table table-striped">
+					<tbody>
+					<thead>
+					<tr>
+						<th style="text-align: justify">OptieID</th>
+						<th style="text-align: justify">Optie</th>
+						<th style="text-align: justify">Beschrijving</th>
+						<th style="text-align: justify">Categorie</th>
+						<th style="text-align: justify">Prijs<th/>
+
+
+					</tr>
+					</thead>
+					<tbody>
+
+					@foreach (var Optie in Model.Opties)
+					{
+						<tr>
+							<td>@Optie.OptieId</td>
+							<td>@Optie.OptieNaam</td>
+							<td>@Optie.OptieBeschrijving</td>
+							<td>@Optie.OptieCategorie</td>
+							<td>@Optie.OptiePrijs</td>
+
+
+							<td>
+								<a asp-page="CRUDOPTIES/Delete" asp-route-OptieId="@Optie.OptieId" class="btn btn-danger">Delete</a> |
+								<a asp-page="CRUDOPTIES/Update" asp-route-OptieId="@Optie.OptieId" class="btn btn-info">Update</a>
+							</td>
+						</tr>
+					}
+
+					</tbody>
+				</table>
 			</div>
-
+			</div>
 		</div>
-
-
 
 
 	</div>
