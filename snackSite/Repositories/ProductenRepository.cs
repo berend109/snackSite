@@ -60,7 +60,7 @@ public class ProductenRepository
                 SELECT * FROM product WHERE ProductId = @productId";
 
         using var connection = GetConnection();
-        var updatedCategory = connection.QuerySingle<Product>(sql, product);
+        var updatedCategory = connection.QuerySingle<Product>(sql, product );
         return updatedCategory;
     }
 }
