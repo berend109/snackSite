@@ -1,0 +1,32 @@
+﻿@page
+@model snackSite.Pages.CRUDOPTIES.Create
+
+<div class="row">
+<div class="col">
+    <h1>Create New Optie</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label asp-for="Optie.OptieNaam">Optie:</label>
+            <input asp-for="Optie.OptieNaam" class="form-control"/>
+            <span asp-validation-for="Optie.OptieNaam"></span>
+
+            <label asp-for="Optie.OptieBeschrijving">Beschrijving:</label>
+            <input asp-for="Optie.OptieBeschrijving" class="form-control"/>
+            <span asp-validation-for="Optie.OptieBeschrijving"></span>
+
+            <label asp-for="Optie.OptieCategorie">Categorie:</label>
+            <input asp-for="Optie.OptieCategorie" class="form-control"/>
+            <span asp-validation-for="Optie.OptieCategorie"></span>
+                
+            <label asp-for="Optie.OptiePrijs">Prijs:</label>
+            <input asp-for="Optie.OptiePrijs" class="form-control"/>
+            <span asp-validation-for="Optie.OptiePrijs"></span>
+                
+        </div>
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Create</button>
+            <button asp-page-handler="Cancel" class="btn btn-danger">Cancel</button>
+        </div>
+    </form>
+</div>
+</div>

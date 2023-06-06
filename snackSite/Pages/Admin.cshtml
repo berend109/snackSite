@@ -1,0 +1,132 @@
+﻿@page
+@using snackSite.Pages.CRUDProducten
+@model snackSite.Pages.AdminModel
+@{
+}
+
+<div class="container">
+	<div class="h1 border-1 border-dark border-bottom pt-1 pb-3">Admin page</div>
+	<div class="d-flex flex-row mt-5 ">
+		<div class="h2 me-1">price cap  €</div>
+		<div class="mt-1" style="width: 300px">
+			<input type="text" class="form-control pe-2" style="float: left; width: 50%" placeholder="7.50" />
+			<button class="btn btn-primary ps-2" style="float: right; width: 50%">Update</button>
+		</div>
+	</div>
+	<div class="mt-5 mb-5">
+		<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#admin-db">
+			<div class="h2 ">Tables</div>
+			<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+		</a>
+		<div class="collapse" id="admin-db">
+			<div class="m-5 border-1 border-light">
+				<!-- Gebruikers database opties-->
+				<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#gebruiker-db">
+					<div class="h2 ">Gebruikers</div>
+					<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+				</a>
+				<div class="collapse" id="gebruiker-db">
+					Hier kun je uiteindelijk gebruikers toevoegen en verweideren
+				</div>
+				<!-- Aanbieders database opties-->
+				<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#aanbieder-db">
+					<div class="h2 ">Aanbieders</div>
+					<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+				</a>
+				<div class="collapse" id="aanbieder-db">
+					Hier kun je uiteindelijk aanbieders toevoegen en verwijderen
+				</div>
+				<!-- Producten database opties-->
+				<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#Producten-db">
+					<div class="h2 ">Producten</div>
+					<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+
+				</a>
+				<div class="collapse" id="Producten-db">
+					<a asp-page="CRUDProducten/Create" class="btn btn-primary mt-2">Create New Product</a>
+					<hr>
+					<table class="table table-striped">
+						<tbody>
+						<thead>
+						<tr>
+							<th style="text-align: justify">ProductID</th>
+							<th style="text-align: justify">Product</th>
+							<th style="text-align: justify">Beschrijving</th>
+							<th style="text-align: justify">Categorie</th>
+							<th style="text-align: justify">Prijs<th/>
+
+						</tr>
+						</thead>
+						<tbody>
+
+						@foreach (var producten in Model.Producten)
+						{
+							<tr>
+								<td>@producten.ProductId</td>
+								<td>@producten.ProductNaam</td>
+								<td>@producten.Productbeschrijving</td>
+								<td>@producten.ProductCategorie</td>
+								<td>@producten.ProductPrijs</td>
+
+
+								<td>
+									<a asp-page="CRUDProducten/Delete" asp-route-productId="@producten.ProductId" class="btn btn-danger">Delete</a> |
+									<a asp-page="CRUDProducten/Update" asp-route-productId="@producten.ProductId" class="btn btn-info">Update</a>
+								</td>
+							</tr>
+						}
+
+						</tbody>
+					</table>
+				</div>
+			
+			<!-- Opties database opties-->
+			<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#optie-db">
+				<div class="h2 ">Opties</div>
+				<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
+			</a>
+			<div class="collapse" id="optie-db">
+				<a asp-page="CRUDOPTIES/Create" class="btn btn-primary mt-2">Create New Optie</a>
+				<hr>
+				<table class="table table-striped">
+					<tbody>
+					<thead>
+					<tr>
+						<th style="text-align: justify">OptieID</th>
+						<th style="text-align: justify">Optie</th>
+						<th style="text-align: justify">Beschrijving</th>
+						<th style="text-align: justify">Categorie</th>
+						<th style="text-align: justify">Prijs<th/>
+
+
+					</tr>
+					</thead>
+					<tbody>
+
+					@foreach (var Optie in Model.Opties)
+					{
+						<tr>
+							<td>@Optie.OptieId</td>
+							<td>@Optie.OptieNaam</td>
+							<td>@Optie.OptieBeschrijving</td>
+							<td>@Optie.OptieCategorie</td>
+							<td>@Optie.OptiePrijs</td>
+
+
+							<td>
+								<a asp-page="CRUDOPTIES/Delete" asp-route-OptieId="@Optie.OptieId" class="btn btn-danger">Delete</a> |
+								<a asp-page="CRUDOPTIES/Update" asp-route-OptieId="@Optie.OptieId" class="btn btn-info">Update</a>
+							</td>
+						</tr>
+					}
+
+					</tbody>
+				</table>
+			</div>
+			</div>
+		</div>
+
+
+	</div>
+
+</div>

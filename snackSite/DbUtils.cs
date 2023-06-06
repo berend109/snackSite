@@ -5,15 +5,16 @@ namespace snackSite
 {
     public class DbUtils
     {
-        public DbUtils()
-        {
-        }
 
         public IDbConnection GetDbConnection()
         {
-            string connectionString = Program.Configuration.GetConnectionString("DefaultConnection")!;
+            string connectionString = Program.Configuration
+                .GetConnectionString("snackSite")!;
+
 
             return new MySqlConnection(connectionString);
         }
     }
+
 }
+

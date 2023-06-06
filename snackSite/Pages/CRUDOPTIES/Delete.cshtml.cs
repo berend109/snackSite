@@ -3,21 +3,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using snackSite.Models;
 using snackSite.Repositories;
 
-namespace snackSite.Pages.CRUDProducten;
+namespace snackSite.Pages.CRUDOPTIES;
 
 public class Delete : PageModel
 {
-    public Product Product { get; set; } = null!;
+    public Optie Optie { get; set; } = null!;
  
-    public void OnGet([FromRoute] int productId)
+    public void OnGet([FromRoute] int optieId)
     {
-        Product = new ProductenRepository().Get(productId);
+        Optie = new OptieRepository().Get(optieId);
 
     }
 
-    public IActionResult OnPostDelete([FromRoute] int productId)
+    public IActionResult OnPostDelete([FromRoute] int optieId)
     {
-        bool success = new ProductenRepository().Delete(productId);
+        bool success = new OptieRepository().Delete(optieId);
         return RedirectToPage("../Admin");
     }
 
