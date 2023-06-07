@@ -13,6 +13,10 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+ 
+Program.Configuration = app.Configuration;
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -25,7 +29,9 @@ app.MapRazorPages();
 app.Run();
 
 
+
 partial class Program
 {
     public static IConfiguration Configuration { get; set; } = null!;
 }
+

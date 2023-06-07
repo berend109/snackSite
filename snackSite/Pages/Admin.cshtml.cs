@@ -1,24 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using snackSite.Models;
+using snackSite.Repositories;
 
 namespace snackSite.Pages
 {
-    public class Admin : PageModel
+    public class AdminModel : PageModel
     {
-        private readonly ILogger<Admin> _logger;
-
-        public Admin(ILogger<Admin> logger)
-        {
-            _logger = logger;
-        }
-
+        public IEnumerable <Product> Producten { get; set; } = null!;
+        public IEnumerable <Optie> Opties { get; set; } = null!;
         public void OnGet()
         {
+            Producten = new ProductenRepository().GetProduct();
+            Opties = new OptieRepository().GetOptie();
         }
     }
 }

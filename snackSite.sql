@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXISTS SnackSite;
+CREATE DATABASE IF NOT EXISTS Project;
 
-USE SnackSite;
+USE Project;
 
-DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftOpties CASCADE;
+DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftBesteld, HeeftOpties CASCADE;
 
 create table Gebruiker (
   GebruikerId INTEGER auto_increment PRIMARY KEY,
