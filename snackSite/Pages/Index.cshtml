@@ -22,9 +22,11 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
-                <div class="row">
+           
                     <!-- Cards -->
+            <form method="post">
+                <div class="col-md-9">
+                    <div class="row">
                     @foreach (var product in Model.Producten)
                     {
                         <form method="POST">
@@ -35,6 +37,7 @@
                                     <h5 class="card-title justify-content-start">@product.ProductNaam</h5>
                                         <input type="hidden" asp-for="@product.ProductId" />
                                     <p class="card-text">@product.Productbeschrijving </p>
+                                    <p class="card-text">@product.AanbiederNaam </p>
                                     <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
                                 </div>
                                 <div class="p-3">
@@ -47,8 +50,10 @@
                                                     <p class="h5 pt-1">Optie</p>
                                                 </div>
                                                 <div class="col-6">
+
                                                     <select class="form-select">
                                                         <option asp-for="Optie.OptieId" selected>none</option>
+
                                                         @foreach (var opties in Model.Opties)
                                                         {
                                                             @if (opties.OptieCategorie == product.ProductCategorie)
@@ -59,20 +64,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <!-- Subkeuzes Aanbieder -->
-                                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
-                                                <div class="col-6">
-                                                    <p class="h5 pt-1">Aanbieder</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <select asp-for="Aanbieder.AanbiederId"  class="form-select">
-                                                        <option selected>-</option>
-                                                        <option value="1">wijn&spice</option>
-                                                        <option value="2">Snackbar de malle molen</option>
-                                                        <option value="3">Smullers</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+
                                         </div>
                                         <div class=" row">
                                             <div class=" col text-start h3 ">Prijs:</div>
@@ -80,7 +72,9 @@
                                              
                                             
                                         </div>
+
                                         <button class=" btn btn-primary w-75 fs-4 pt-0 pb-1" asp-page-handler="Toevoegen" type="submit" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+
                                             Toevoegen
                                             <svg @*xmlns="images/icons"*@ width="35" height="35" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
                                                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -93,8 +87,10 @@
                         </div>
                         </form>
                     }
+                    </div>
                 </div>
-            </div>
+            </form>
+             
         </div>
     </div>
 </div>

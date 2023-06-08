@@ -16,6 +16,7 @@ namespace snackSite.Pages
         public Optie Optie { get; set; }
         public IEnumerable<Product> Producten { get; set; } = null!;
         public IEnumerable<Optie> Opties { get; set; } = null!;
+        public int OptieID { get; set; }
 
         private readonly ILogger<IndexModel> _logger;
 

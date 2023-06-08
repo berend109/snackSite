@@ -29,8 +29,8 @@ public class ProductenRepository
     public Product Add (Product? product)
     {
         string sql = @"
-                INSERT INTO product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie)
-                VALUES (@ProductNaam, @ProductBeschrijving, @ProductPrijs, @ProductCategorie);  
+                INSERT INTO product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, AanbiederNaam)
+                VALUES (@ProductNaam, @ProductBeschrijving, @ProductPrijs, @ProductCategorie, @AanbiederNaam);  
                 SELECT * FROM product WHERE ProductId = LAST_INSERT_ID()";
             
         using var connection = GetConnection();
@@ -53,7 +53,8 @@ public class ProductenRepository
                 ProductNaam = @ProductNaam,
                 ProductBeschrijving = @ProductBeschrijving,
                 ProductPrijs = @ProductPrijs,
-                ProductCategorie = @ProductCategorie
+                ProductCategorie = @ProductCategorie,
+                AanbiederNaam = @AanbiederNaam
                 WHERE ProductId = @productId;
                 SELECT * FROM product WHERE ProductId = @productId";
 
@@ -61,4 +62,29 @@ public class ProductenRepository
         var updatedCategory = connection.QuerySingle<Product>(sql, product );
         return updatedCategory;
     }
+    /*public bool AddHeeftEenProduct(int aanbiederId, int productId)
+    {
+        string sql = @"
+                INSERT INTO heefteenproduct (aanbiederId, productId)
+                VALUES (@aid, @pid)
+                ";
+
+        using var connection = GetConnection();
+        var maker = connection.Execute(sql, new { aid = aanbiederId, pid = productId});
+        return true;
+    }*/
+
+    /*public IEnumerable<Product> Get()
+    {
+        string sql = @"SELECT * FROM product P
+                        LEFT JOIN heefteenproduct hep ON hep.productId = P.productId
+                        LEFT JOIN aanbieder a ON a.aanbiederId = hep.aanbiederID";
+            
+       
+        using var connection = GetConnection();
+        var Producten = connection.Query<Product, Aanbieder, Product>(sql, ((product, aanbieder) => product, Aanbieder)); 
+        return Producten;
+    }*/
+
+    
 }
