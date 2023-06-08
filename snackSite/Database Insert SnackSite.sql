@@ -10,8 +10,7 @@ create table Gebruiker (
                            Wachtwoord varchar(255) NOT NULL,
                            Email varchar(255) NOT NULL,
                            Adminrole boolean NOT NULL,
-                           Budget DECIMAL(10,2) NOT NULL,
-                           BudgetLimit BOOLEAN NOT NULL
+                           Budget DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE Product(
@@ -20,7 +19,7 @@ CREATE TABLE Product(
                         Productbeschrijving varchar(255),
                         ProductPrijs DECIMAL(10,2) NOT NULL,
                         ProductCategorie VARCHAR(255) NOT NULL,
-                        Aanbieder VARCHAR(255) NOT NULL
+                        AanbiederNaam VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Opties(
@@ -71,36 +70,36 @@ CREATE TABLE HeeftEenBestelling
 
 
 -- TABLE Gebruiker
-INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget, BudgetLimit)
-VALUES ('Alice', 'password123', 'alice@example.com', true, 7.50, true);
+INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget)
+VALUES ('Alice', 'password123', 'alice@example.com', true, 7.50);
 
-INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget, BudgetLimit)
-VALUES ('Bob', 'securepass456', 'bob@example.com', false, 7.50, true);
+INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget)
+VALUES ('Bob', 'securepass456', 'bob@example.com', false, 7.50);
 
-INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget, BudgetLimit)
-VALUES ('Charlie', 'abc123', 'charlie@example.com', false, 7.50, true);
+INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget)
+VALUES ('Charlie', 'abc123', 'charlie@example.com', false, 7.50);
 
-INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget, BudgetLimit)
-VALUES ('David', 'davidpass', 'david@example.com', false, 7.50, true);
+INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget)
+VALUES ('David', 'davidpass', 'david@example.com', false, 7.50);
 
-INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget, BudgetLimit)
-VALUES ('Eve', 'evesecret', 'eve@example.com', false, 7.50, true);
+INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget)
+VALUES ('Eve', 'evesecret', 'eve@example.com', false, 7.50);
 
 -- TABLE Product
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, AanbiederNaam)
 VALUES ('Appel', 'Verse en sappige appel', 1.99, 'Fruit', 'Pizzeria Bella Italia');
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, AanbiederNaam)
 VALUES ('Komkommer', 'Knapperige komkommer', 0.99, 'Groenten', 'Pizzeria Bella Italia');
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, AanbiederNaam)
 VALUES ('Kipfilet', 'Botloze kipfilet', 5.99, 'Vlees', 'Pizzeria Bella Italia');
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, AanbiederNaam)
 VALUES ('Yoghurt', 'Romige yoghurt', 2.49, 'Zuivel','Pizzeria Bella Italia' );
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, AanbiederNaam)
 VALUES ('Quinoa', 'Voedzame quinoa-granen', 3.99, 'Granen','Restaurant De Smaakmaker');
 
 -- TABLE Opties 
@@ -140,18 +139,19 @@ VALUES (5, 4, 5, 7.50);
 
 -- TABLE Aanbieder 
 
-INSERT INTO Aanbieder (Naam)
-VALUES ('Restaurant De Smaakmaker');
+-- INSERT INTO Aanbieder (Naam)
+-- VALUES ('Restaurant De Smaakmaker');
 
-INSERT INTO Aanbieder (Naam)
-VALUES ('Pizzeria Bella Italia');
+-- INSERT INTO Aanbieder (Naam)
+-- VALUES ('Pizzeria Bella Italia');
 
-INSERT INTO Aanbieder (Naam)
-VALUES ('Snackbar De Snelle Hap');
+-- INSERT INTO Aanbieder (Naam)
+-- VALUES ('Snackbar De Snelle Hap');
 
-INSERT INTO Aanbieder (Naam)
-VALUES ('Chinees Restaurant Lotus');
+-- INSERT INTO Aanbieder (Naam)
+-- VALUES ('Chinees Restaurant Lotus');
 
-INSERT INTO Aanbieder (Naam)
-VALUES ('Thais Eethuis Siam');
+-- INSERT INTO Aanbieder (Naam)
+-- VALUES ('Thais Eethuis Siam');
+
 
