@@ -1,5 +1,6 @@
 ﻿@page
 @using snackSite.Pages.CRUDProducten
+@using snackSite.Models
 @model snackSite.Pages.AdminModel
 @{
 }
@@ -26,16 +27,51 @@
 					<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
 				</a>
 				<div class="collapse" id="gebruiker-db">
-					Hier kun je uiteindelijk gebruikers toevoegen en verweideren
+					<div class="row">
+                        <div class="col">
+                            <h1>Display gebruikers</h1>
+                    
+                            <a asp-page="CRUDGebruikers/Create" class="btn btn-primary">Create New Gebruiker</a>
+                            <hr>
+                            <table class="table table-striped">
+                                <tbody>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: justify">GebruikerId</th>
+                                        <th style="text-align: justify">Naam</th>
+	                                    <th style="text-align: justify">Email</th>
+                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                    
+                                        @foreach (var gebruikers in Model.Gebruikers)
+                                        {
+                                        <tr>
+                                            <td>@gebruikers.GebruikerId</td>
+                                            <td>@gebruikers.Naam</td>
+	                                        <td>@gebruikers.Email</td>
+                    
+                                            <td>
+                                                <a asp-page="CRUDGebruikers/Delete" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-danger">Delete</a> |
+                                                <a asp-page="CRUDGebruikers/Update" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-info">Update</a>
+                                            </td>
+                                        </tr>
+                                        }
+                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 				</div>
-				<!-- Aanbieders database opties-->
+				@*<!-- Aanbieders database opties-->
 				<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#aanbieder-db">
 					<div class="h2 ">Aanbieders</div>
 					<img class=" animate-arrow-button" src="./images/icons/chevron-down.svg" style="" alt="arrow icon">
 				</a>
 				<div class="collapse" id="aanbieder-db">
 					Hier kun je uiteindelijk aanbieders toevoegen en verwijderen
-				</div>
+				</div>*@
 				<!-- Producten database opties-->
 				<a class=" text-black d-flex flex-row click justify-content-between border-dark border-bottom" style="text-decoration: none" data-bs-toggle="collapse" data-bs-target="#Producten-db">
 					<div class="h2 ">Producten</div>
@@ -54,6 +90,7 @@
 							<th style="text-align: justify">Beschrijving</th>
 							<th style="text-align: justify">Categorie</th>
 							<th style="text-align: justify">Prijs<th/>
+							<th style="text-align: justify">Aanbieder<th/>
 
 						</tr>
 						</thead>
@@ -67,6 +104,7 @@
 								<td>@producten.Productbeschrijving</td>
 								<td>@producten.ProductCategorie</td>
 								<td>@producten.ProductPrijs</td>
+								<td>@producten.AanbiederNaam</td>
 
 
 								<td>

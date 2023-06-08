@@ -20,8 +20,7 @@ CREATE TABLE Product(
                         Productbeschrijving varchar(255),
                         ProductPrijs DECIMAL(10,2) NOT NULL,
                         ProductCategorie VARCHAR(255) NOT NULL,
-                        Vegan BOOLEAN,
-                        Vega BOOLEAN
+                        Aanbieder VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE Opties(
@@ -43,19 +42,6 @@ CREATE TABLE Bestelling (
 );
 
 
-
-CREATE TABLE Aanbieder(
-                          AanbiederId INTEGER auto_increment PRIMARY KEY,
-                          Naam varchar(255) NOT NULL
-);
-
-CREATE TABLE HeeftEenProduct (
-                                 AanbiederId INTEGER NOT NULL,
-                                 ProductId INTEGER NOT NULL ,
-                                 FOREIGN KEY (AanbiederId) REFERENCES Aanbieder (AanbiederId),
-                                 FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
-                                 CONSTRAINT PK_HeeftEenProduct PRIMARY KEY (AanbiederId,ProductId)
-);
 
 CREATE TABLE HeeftOpties(
                             OptieId INTEGER NOT NULL,
@@ -102,20 +88,20 @@ VALUES ('Eve', 'evesecret', 'eve@example.com', false, 7.50, true);
 
 -- TABLE Product
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Vegan, Vega)
-VALUES ('Appel', 'Verse en sappige appel', 1.99, 'Fruit', true, false);
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+VALUES ('Appel', 'Verse en sappige appel', 1.99, 'Fruit', 'Pizzeria Bella Italia');
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Vegan, Vega)
-VALUES ('Komkommer', 'Knapperige komkommer', 0.99, 'Groenten', true, true);
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+VALUES ('Komkommer', 'Knapperige komkommer', 0.99, 'Groenten', 'Pizzeria Bella Italia');
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Vegan, Vega)
-VALUES ('Kipfilet', 'Botloze kipfilet', 5.99, 'Vlees', false, false);
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+VALUES ('Kipfilet', 'Botloze kipfilet', 5.99, 'Vlees', 'Pizzeria Bella Italia');
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Vegan, Vega)
-VALUES ('Yoghurt', 'Romige yoghurt', 2.49, 'Zuivel', false, true);
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+VALUES ('Yoghurt', 'Romige yoghurt', 2.49, 'Zuivel','Pizzeria Bella Italia' );
 
-INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Vegan, Vega)
-VALUES ('Quinoa', 'Voedzame quinoa-granen', 3.99, 'Granen', true, true);
+INSERT INTO Product (ProductNaam, Productbeschrijving, ProductPrijs, ProductCategorie, Aanbieder)
+VALUES ('Quinoa', 'Voedzame quinoa-granen', 3.99, 'Granen','Restaurant De Smaakmaker');
 
 -- TABLE Opties 
 

@@ -22,10 +22,11 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
-                <div class="row">
+           
                     <!-- Cards -->
-                    <form method="post">
+            <form method="post">
+                <div class="col-md-9">
+                    <div class="row">
                     @foreach (var product in Model.Producten)
                     {
                         <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
@@ -34,6 +35,7 @@
                                 <div class="position-relative card-body border-top" style="height: 12rem">
                                     <h5 class="card-title justify-content-start">@product.ProductNaam</h5>
                                     <p class="card-text">@product.Productbeschrijving </p>
+                                    <p class="card-text">@product.AanbiederNaam </p>
                                     <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
                                 </div>
                                 <div class="p-3">
@@ -58,20 +60,6 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <!-- Subkeuzes Aanbieder -->
-                                            <div class="row mt-2 mb-2" aria-label="Aanbieder">
-                                                <div class="col-6">
-                                                    <p class="h5 pt-1">Aanbieder</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <select class="form-select">
-                                                        <option selected>-</option>
-                                                        <option value="1">wijn&spice</option>
-                                                        <option value="2">Snackbar de malle molen</option>
-                                                        <option value="3">Smullers</option>
-                                                    </select>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class=" row">
                                             <div class=" col text-start h3 ">Prijs:</div>
@@ -91,9 +79,10 @@
 
                         </div>
                     }
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </form>
+             
         </div>
     </div>
 </div>

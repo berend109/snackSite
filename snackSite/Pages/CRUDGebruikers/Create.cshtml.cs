@@ -22,12 +22,12 @@ namespace snackSite.Pages.CRUDGebruikers
             }
 
             var createdGebruiker = new GebruikersRepository().Add(Gebruiker);
-            return RedirectToPage(nameof(Index));
+            return RedirectToPage("../Admin");
         }
 
         public IActionResult OnPostCancel()
         {
-            return Redirect(nameof(Index));
+            return Redirect("../Admin");
         }
     }
 }
