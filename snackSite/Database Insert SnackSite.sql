@@ -2,15 +2,15 @@ CREATE DATABASE IF NOT EXISTS SnackSite;
 
 USE SnackSite;
 
-DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, Aanbieder, HeeftBesteld, HeeftEenBestelling, HeeftOpties, HeeftEenProduct CASCADE;
+DROP TABLE IF EXISTS Gebruiker, Product, Bestelling, Opties, HeeftBesteld, HeeftEenBestelling, HeeftOpties, HeeftEenProduct CASCADE;
 
 create table Gebruiker (
                            GebruikerId INTEGER auto_increment PRIMARY KEY,
                            Naam varchar(255) NOT NULL UNIQUE ,
                            Wachtwoord varchar(255) NOT NULL,
                            Email varchar(255) NOT NULL,
-                           Adminrole boolean NOT NULL,
-                           Budget DECIMAL(10,2) NOT NULL
+                           Budget DECIMAL(10,2) NOT NULL,
+                           Adminrole boolean
 );
 
 CREATE TABLE Product(
