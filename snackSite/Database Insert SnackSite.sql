@@ -36,7 +36,7 @@ CREATE TABLE Bestelling (
                             BestellingId INTEGER auto_increment PRIMARY KEY,
                             ProductId INTEGER NOT NULL,
                             OptieId INTEGER NOT NULL,
-                            TotaalPrijs DECIMAL(10,2),
+                            Totaal DECIMAL,
                             Prijs DECIMAL(10,2),
                             FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
                             FOREIGN KEY (OptieId) REFERENCES Opties (OptieId)
@@ -168,5 +168,4 @@ VALUES ('Chinees Restaurant Lotus');
 
 INSERT INTO Aanbieder (Naam)
 VALUES ('Thais Eethuis Siam');
-
 
