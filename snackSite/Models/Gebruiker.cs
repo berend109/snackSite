@@ -16,6 +16,6 @@ public class Gebruiker
     [Required, Range(0, 99.99)]
     public decimal Budget { get; set; }
 
-    public bool Adminrole { get; set; }
+    public bool Adminrole { get; set; } 
 
 }
