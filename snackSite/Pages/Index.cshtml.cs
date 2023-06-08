@@ -8,6 +8,12 @@ namespace snackSite.Pages
     public class IndexModel : PageModel
     {
         private bool OptionSelected = false;
+
+        public Aanbieder Aanbieder { get; set; }
+
+        public Product Product { get; set; }
+
+        public Optie Optie { get; set; }
         public IEnumerable<Product> Producten { get; set; } = null!;
         public IEnumerable<Optie> Opties { get; set; } = null!;
         public int OptieID { get; set; }
@@ -19,7 +25,7 @@ namespace snackSite.Pages
             _logger = logger;
         }
 
-        public void OnGet(string? searchTerm = null)
+        public IActionResult OnGet(string? searchTerm = null)
         {
             Producten = new ProductenRepository().GetProduct();
             Opties = new OptieRepository().GetOptie();
@@ -28,6 +34,13 @@ namespace snackSite.Pages
             {
                 Producten = Producten.Where(Producten => Producten.ProductNaam.Contains(searchTerm));
             }
+
+            return Page();
+        }
+
+        public IActionResult OnPostToevoegen(Optie optie, Aanbieder aanbieder, Product product)
+        {
+            return RedirectToPage();
         }
     }
 }
