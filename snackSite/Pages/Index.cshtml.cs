@@ -10,6 +10,7 @@ namespace snackSite.Pages
         private bool OptionSelected = false;
         public IEnumerable<Product> Producten { get; set; } = null!;
         public IEnumerable<Optie> Opties { get; set; } = null!;
+        public int OptieID { get; set; }
 
         private readonly ILogger<IndexModel> _logger;
 
