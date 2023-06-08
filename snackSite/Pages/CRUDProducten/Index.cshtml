@@ -1,4 +1,5 @@
 ﻿@page
+@using snackSite.Models
 @model snackSite.Pages.CRUDProducten.Index
 
 
@@ -18,6 +19,7 @@
                 <th style="text-align: justify">Beschrijving</th>
                 <th style="text-align: justify">Categorie</th>
                 <th style="text-align: justify">Prijs<th/>
+                <th style="text-align: justify">Aanbieder</th>
                 
                
 
@@ -33,6 +35,7 @@
                     <td>@producten.Productbeschrijving</td>
                     <td>@producten.ProductCategorie</td>
                     <td>@producten.ProductPrijs</td>
+                   
                     
                     
                     <td>

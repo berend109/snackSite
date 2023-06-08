@@ -8,12 +8,14 @@ namespace snackSite.Pages.CRUDProducten;
 public class Create : PageModel
 {
     [BindProperty] public Product Product { get; set; } = null!;
-    
+    public IEnumerable<Aanbieder> Aanbieders { get; set; } = null!;
+
     public void OnGet()
     {
+        Aanbieders = new AanbiedersRepository().GetAanbieder();
     }
 
-    public IActionResult OnPost()
+    public IActionResult OnPost(Product product)
     {
         if (!ModelState.IsValid)
         {
@@ -21,6 +23,7 @@ public class Create : PageModel
         }
         
         var createdProduct = new ProductenRepository().Add(Product);
+        // var aanbieder = new ProductenRepository().AddHeeftEenProduct(aanbiederId, createdProduct.ProductId);
         return RedirectToPage("../Admin");
     }
 
