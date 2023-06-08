@@ -31,8 +31,8 @@ public class GebruikersRepository
     public Gebruiker Add(Gebruiker? gebruiker)
     {
         string sql = @"
-                INSERT INTO gebruiker (Naam, Wachtwoord, Email)
-                VALUES (@Naam, @Wachtwoord, @Email);  
+                INSERT INTO gebruiker (Naam, Wachtwoord, Email, Budget, Admin)
+                VALUES (@Naam, @Wachtwoord, @Email @Budget, @Admin);
                 SELECT * FROM gebruiker WHERE GebruikerId = LAST_INSERT_ID()";
 
         using var connection = GetConnection();
@@ -55,6 +55,8 @@ public class GebruikersRepository
                 Naam = @Naam,
                 Wachtwoord = @Wachtwoord,
                 Email = @Email
+                Budget = @Budget
+                Adminrole = @Adminrole
                 WHERE GebruikerId = @gebruikerId;
                 SELECT * FROM gebruiker WHERE gebruikerId = @gebruikerId";
 

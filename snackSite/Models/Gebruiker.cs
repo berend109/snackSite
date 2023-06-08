@@ -13,9 +13,9 @@ public class Gebruiker
 
     public string Email { get; set; } = null!;
 
-    public string Adminrole { get; set; } = null!;
+    [Required, Range(0, 99.99)]
+    public decimal Budget { get; set; }
 
-    public bool Budget { get; set; }
+    public bool Adminrole { get; set; }
 
-    public bool Budgetlimit { get; set; }
 }

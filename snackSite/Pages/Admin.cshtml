@@ -40,6 +40,8 @@
                                         <th style="text-align: justify">GebruikerId</th>
                                         <th style="text-align: justify">Naam</th>
 	                                    <th style="text-align: justify">Email</th>
+										<th style="text-align: justify">Budget</th>
+										<th style="text-align: justify">AdminRole</th>
                     
                                     </tr>
                                 </thead>
@@ -51,7 +53,17 @@
                                             <td>@gebruikers.GebruikerId</td>
                                             <td>@gebruikers.Naam</td>
 	                                        <td>@gebruikers.Email</td>
-                    
+											<td>@gebruikers.Budget</td>
+												<td>@if (gebruikers.Adminrole)
+													{
+														<p>Ja</p>
+													}
+													else
+													{
+														<p>Nee</p>
+													}
+												</td>
+
                                             <td>
                                                 <a asp-page="CRUDGebruikers/Delete" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-danger">Delete</a> |
                                                 <a asp-page="CRUDGebruikers/Update" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-info">Update</a>
