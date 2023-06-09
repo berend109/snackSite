@@ -11,25 +11,22 @@ public class UserRepository
         return new DbUtils().GetDbConnection();
     }
 
-    // add user after register
-    public static User Add(string username, string password)
+    public User Add(string username, string password, string email)
     {
         using var connection = GetConnection();
+        int Budget = 0, BudgetLimit = 0, Adminrole = 0;
+        string sql = @"INSERT INTO gebruiker (Naam, Wachtwoord, Email, Adminrole, Budget, BudgetLimit) VALUES (@Naam, @Wachtwoord, @Email, @Adminrole, @Budget, @BudgetLimit);
+                        SELECT * FROM gebruiker WHERE GebruikerId = LAST_INSERT_ID()";
 
-        // TODO: create sql string to add user after register
-        const string sql = @"SQL STRING";
-
-        var parameters = new { Name = username, Password = password };
+        var parameters = new { Name = username, Password = password, Email = email, Adminrole = Adminrole, Budget, BudgetLimit };
         var user = connection.QuerySingle<User>(sql, parameters);
         return user;
     }
 
-    public static User Get(string email)
+    public static User Get(string? email)
     {
         using var connection = GetConnection();
-
-        // TODO: create sql string to get user by email
-        const string sql = @"SQL STRING";
+        const string sql = @"SELECT * FROM gebruiker WHERE Email = @Email";
         var parameters = new { email };
 
         var user = connection.QuerySingleOrDefault<User>(sql, parameters);

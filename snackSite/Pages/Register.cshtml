@@ -1,37 +1,40 @@
 @page
-@model snackSite.Pages.Register
+@model snackSite.Pages.RegisterModel
 
 @{
 	ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container">
 
-<div class="shadow">
-	<div class="card text-start">
-		<form class="row g-3 p-4">
-			<div class="col-md-6">
-				<label for="userName" class="form-label">Naam</label>
-				<input asp-for="user!.Name" type="email" class="form-control" id="userName">
-			</div>
-			<div class="col-md-6">
-				<label for="inputEmail" class="form-label">Email</label>
-				<input asp-for="user!.Email" type="email" class="form-control" id="inputEmail">
-			</div>
-			<div class="col-md-6">
-				<label for="inputPassword" class="form-label">Password</label>
-				<input asp-for="user!.Password" type="password" class="form-control" id="inputPassword">
-			</div>
-			<div class="col-md-6">
-				<label for="inputPassword1" class="form-label">Password</label>
-				<input asp-for="user!.Password2" type="password" class="form-control" id="inputPassword1">
-			</div>
-			<div class="col-6 mt-3">
-				<button type="submit" class="btn btn-outline-success">Register</button>
-			</div>
-			<div class="col-6 mt-3">
-				<a class="btn btn-primary" asp-area="" asp-page="/Login">Login</a>
-			</div>
-		</form>
+	<h1>@ViewData["Title"]</h1>
+
+	<div class="shadow">
+		<div class="card text-start">
+			<form class="row g-3 p-4" method="POST">
+				<div class="col-md-6">
+					<label for="userName" class="form-label">Naam</label>
+					<input asp-for="user!.Name" type="text" class="form-control" id="userName">
+				</div>
+				<div class="col-md-6">
+					<label for="inputEmail" class="form-label">Email</label>
+					<input asp-for="user!.Email" type="email" class="form-control" id="inputEmail">
+				</div>
+				<div class="col-md-6">
+					<label for="inputPassword" class="form-label">Password</label>
+					<input asp-for="user!.Password" type="password" class="form-control" id="inputPassword">
+				</div>
+				<div class="col-md-6">
+					<label for="inputPassword1" class="form-label">Password</label>
+					<input asp-for="user!.Password2" type="password" class="form-control" id="inputPassword1">
+				</div>
+				<div class="col-6 mt-3">
+					<button type="submit" class="btn btn-outline-success">Register</button>
+				</div>
+				<div class="col-6 mt-3">
+					<a class="btn btn-primary" asp-area="" asp-page="/Login">Login</a>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>

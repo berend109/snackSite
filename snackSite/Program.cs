@@ -12,10 +12,8 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
-
  
 Program.Configuration = app.Configuration;
-
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -23,15 +21,13 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
 app.MapRazorPages();
 
 app.Run();
 
-
-
 partial class Program
 {
     public static IConfiguration Configuration { get; set; } = null!;
 }
-

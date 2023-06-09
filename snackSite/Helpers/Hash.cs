@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace snackSite.Helper;
+namespace snackSite.Helpers;
 
 public static class Hash
 {
