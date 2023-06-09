@@ -31,13 +31,32 @@ public class BestellingRepository
     public Bestelling Add (Bestelling? bestelling)
     {
         string sql = @"
-                INSERT INTO bestelling (productId, totaal)
-                VALUES (@productId, @totaal);  
+                INSERT INTO bestelling (totaalprijs)
+                VALUES (@totaalprijs);  
                 SELECT * FROM bestelling WHERE bestellingId = LAST_INSERT_ID()";
             
         using var connection = GetConnection();
         var addedBestelling = connection.QuerySingle<Bestelling>(sql, bestelling);
         return addedBestelling;
     }
-    
+
+    public bool AddBesteld (int bestellingId, int productId, int optieId)
+    {
+        string sql = @"
+                INSERT INTO heeftbesteld (bestellingId, productId, optieId)
+                VALUES (@bid, @pid, @oid)";  
+                            
+        using var connection = GetConnection();
+        var Besteld = connection.Execute(sql, new { bid = bestellingId, pid = productId, oid = optieId});
+        return true;
+    }
+
+    public IEnumerable<Bestelling> GetBesteld()
+    {
+        string sql = @"select * FROM bestelling b
+                       Left Join heeftbesteld hb on hb.BestellingId = b.BestellingId
+                       Where b.BestellingId = hb.BestellingId";
+        
+    }
+
 }
