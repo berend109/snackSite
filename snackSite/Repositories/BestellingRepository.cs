@@ -55,8 +55,24 @@ public class BestellingRepository
     {
         string sql = @"select * FROM bestelling b
                        Left Join heeftbesteld hb on hb.BestellingId = b.BestellingId
-                       Where b.BestellingId = hb.BestellingId";
+                       Where b.BestellingId = hb.BestellingId
+                       order by hb.gebruikerId             
+                       ";
         
+        using var connection = GetConnection();
+        var Besteld = connection.Query<Bestelling, Product, Optie, Gebruiker, Bestelling>(sql,
+            (bestelling, product, optie, Gebruiker) =>
+            {
+                bestelling.Products.Add(product);
+                bestelling.Opties.Add(optie);
+                bestelling.Gebruikers.Add(Gebruiker);
+                
+                return bestelling;
+                
+            }, splitOn: "bestellingid");
+        
+        return Besteld;
+
     }
 
 }
