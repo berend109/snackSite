@@ -32,12 +32,7 @@ CREATE TABLE Opties(
 
 CREATE TABLE Bestelling (
                             BestellingId INTEGER auto_increment PRIMARY KEY,
-                            ProductId INTEGER NOT NULL,
-                            OptieId INTEGER NOT NULL,
-                            Totaal DECIMAL,
-                            Prijs DECIMAL(10,2),
-                            FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
-                            FOREIGN KEY (OptieId) REFERENCES Opties (OptieId)
+                            TotaalPrijs DECIMAL(10,2)
 );
 
 
@@ -53,6 +48,10 @@ CREATE TABLE HeeftOpties(
 CREATE TABLE HeeftBesteld(
                              ProductId INTEGER NOT NULL,
                              BestellingId INTEGER NOT NULL,
+                             OptieId INTEGER NOT NULL,
+                             GebruikerId INTEGER NOT NULL,
+                             FOREIGN KEY (GebruikerId) REFERENCES Gebruiker(GebruikerId),
+                             FOREIGN KEY (OptieId) REFERENCES Opties(OptieId),
                              FOREIGN KEY (ProductId) REFERENCES Product(ProductId),
                              FOREIGN KEY (BestellingId) REFERENCES Bestelling(BestellingId),
                              CONSTRAINT PK_HeeftBesteld PRIMARY KEY (ProductId, BestellingId)
@@ -120,20 +119,20 @@ INSERT INTO Opties (OptieNaam, OptieBeschrijving, OptiePrijs, OptieCategorie)
 VALUES ('Extra toppings', 'Voeg extra toppings toe aan de snack', 0.75, 'FrituurSnack');
 
 -- TABLE Bestelling
-INSERT INTO Bestelling (ProductId, OptieId,totaal, prijs)
-VALUES (1, 3, 1, 9.99);
+INSERT INTO Bestelling (totaalPrijs)
+VALUES (9.99);
 
-INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
-VALUES (2, 5, 2, 4.95);
+INSERT INTO Bestelling (totaalPrijs)
+VALUES (4.95);
 
-INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
-VALUES (3, 2, 3, 12.50);
+INSERT INTO Bestelling (totaalPrijs)
+VALUES (12.50);
 
-INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
-VALUES (4, 1, 4, 2.99);
+INSERT INTO Bestelling (totaalPrijs)
+VALUES (2.99);
 
-INSERT INTO Bestelling (ProductId, OptieId, totaal, prijs)
-VALUES (5, 4, 5, 7.50);
+INSERT INTO Bestelling (totaalPrijs)
+VALUES (7.50);
 
 
 

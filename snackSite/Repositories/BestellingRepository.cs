@@ -31,12 +31,13 @@ public class BestellingRepository
     public Bestelling Add (Bestelling? bestelling)
     {
         string sql = @"
-                INSERT INTO bestelling (productId, optieId, totaal)
-                VALUES (@productId, @optieId, @totaal);  
+                INSERT INTO bestelling (productId, totaal)
+                VALUES (@productId, @totaal);  
                 SELECT * FROM bestelling WHERE bestellingId = LAST_INSERT_ID()";
             
         using var connection = GetConnection();
         var addedBestelling = connection.QuerySingle<Bestelling>(sql, bestelling);
         return addedBestelling;
     }
+    
 }
