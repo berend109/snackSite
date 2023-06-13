@@ -9,10 +9,12 @@ namespace snackSite.Pages
     {
         public IEnumerable <Product> Producten { get; set; } = null!;
         public IEnumerable <Optie> Opties { get; set; } = null!;
+        public IEnumerable<Gebruiker> Gebruikers { get; set; } = null!;
         public void OnGet()
         {
             Producten = new ProductenRepository().GetProduct();
             Opties = new OptieRepository().GetOptie();
+            Gebruikers = new GebruikersRepository().GetGebruiker();
         }
     }
 }
