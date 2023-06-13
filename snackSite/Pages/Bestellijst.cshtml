@@ -1,0 +1,75 @@
+﻿@page
+@using snackSite.Models
+@model snackSite.Pages.Bestellijst
+
+<table class="table table-striped">
+    <tbody>
+    <thead>
+    <tr>
+        <th>Gebruiker</th>
+        <th>BestellingId</th>
+        <th>Aanbieder</th>
+        <th>Product</th>
+        <th>Product prijs</th>
+        <th>Extra optie</th>
+        <th>Optie prijs</th>
+        <th>Totaal prijs</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var Bestelling in Model.Besteld)
+    {
+        string prevGebruikersNaam = String.Empty;
+        int prevBestellingId = -1;
+        <tr>
+            <td>
+                @foreach (var gebruiker in Bestelling.Gebruikers)
+                {
+                    if (gebruiker.Naam != prevGebruikersNaam && Bestelling.BestellingId != prevBestellingId)
+                    {
+                        <p>@gebruiker.Naam</p>
+                    }
+                   
+                    prevGebruikersNaam = gebruiker.Naam;
+                }
+            </td>
+            <td>@Bestelling.BestellingId</td>
+            <td>
+                @foreach (var product in Bestelling.Products)
+                {
+                    <p>@product.AanbiederNaam</p>
+                }
+            </td>
+            <td>
+                @foreach (var product in Bestelling.Products)
+                {
+                    <p>@product.ProductNaam</p>
+                }
+            </td>
+            <td>
+                @foreach (var product in Bestelling.Products)
+                {
+                    <p>@product.ProductPrijs</p>
+                }
+            </td>
+
+            <td>
+                @foreach (var optie in Bestelling.Opties)
+                {
+                    <p>@optie.OptieNaam</p>
+                }
+            </td>
+            <td>
+                @foreach (var optie in Bestelling.Opties)
+                {
+                    <p>@optie.OptiePrijs</p>
+                }
+            </td>
+            <td>@Bestelling.TotaalPrijs</td>
+
+
+        </tr>
+        prevBestellingId = Bestelling.BestellingId;
+    }
+    </tbody>
+</table>

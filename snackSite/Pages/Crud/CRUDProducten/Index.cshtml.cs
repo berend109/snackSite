@@ -2,7 +2,7 @@
 using snackSite.Models;
 using snackSite.Repositories;
 
-namespace snackSite.Pages.CRUDProducten;
+namespace snackSite.Pages.Crud.CRUDProducten;
 
 public class Index : PageModel
 {

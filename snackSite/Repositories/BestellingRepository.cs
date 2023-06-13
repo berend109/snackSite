@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using Dapper;
+using MySqlX.XDevAPI.Common;
 using snackSite.Models;
 
 namespace snackSite.Repositories;
@@ -54,25 +55,38 @@ public class BestellingRepository
     public IEnumerable<Bestelling> GetBesteld()
     {
         string sql = @"select * FROM bestelling b
-                       Left Join heeftbesteld hb on hb.BestellingId = b.BestellingId
+                       LEFT JOIN heeftbesteld hb on hb.BestellingId = b.BestellingId
+                       LEFT JOIN product p on hb.ProductId = p.ProductId
+                       LEFT JOIN opties o on hb.OptieId = o.OptieId
+                       LEFT JOIN gebruiker g on hb.GebruikerId = g.GebruikerId
                        Where b.BestellingId = hb.BestellingId
                        order by hb.gebruikerId             
                        ";
         
         using var connection = GetConnection();
         var Besteld = connection.Query<Bestelling, Product, Optie, Gebruiker, Bestelling>(sql,
-            (bestelling, product, optie, Gebruiker) =>
+            (bestelling, product, optie, gebruiker) =>
             {
                 bestelling.Products.Add(product);
                 bestelling.Opties.Add(optie);
-                bestelling.Gebruikers.Add(Gebruiker);
+                bestelling.Gebruikers.Add(gebruiker);
                 
                 return bestelling;
                 
-            }, splitOn: "bestellingid");
-        
-        return Besteld;
+            }, splitOn: "BestellingId, ProductId, OptieId, GebruikerId")
+            .ToList();
 
-    }
+        var results = Besteld.GroupBy(p => new { p.BestellingId}).Select(g =>
+        {
+            Bestelling bestelling = g.First();
+            bestelling.Products = g.SelectMany(x => x.Products).ToList();
+            bestelling.Opties = g.SelectMany(c => c.Opties).ToList();
+            bestelling.Gebruikers = g.SelectMany(v => v.Gebruikers).ToList();
+            return bestelling;
+        }).ToList();
+        
+        return results;
+
+    } 
 
 }
