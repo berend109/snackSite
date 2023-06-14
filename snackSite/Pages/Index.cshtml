@@ -25,23 +25,25 @@
            
                     <!-- Cards -->
             <form method="post">
-                <div class="col-md-9">
+                <div class="col">
                     <div class="row">
                     @foreach (var product in Model.Producten)
                     {
-                        <form method="POST">
+                        
                         <div class="container col-lg-2 col-md-3 col-sm-4  pt-4 w-auto ">
+                            <form method="POST">
                             <div class="card lunch_bestel_item shadow" style="width: 18rem;">
-                                <img class=" object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill;" alt=""/>
-                                <div class="position-relative card-body border-top" style="height: 12rem">
-                                    <h5 class="card-title justify-content-start">@product.ProductNaam</h5>
+                                <img class=" h2 object-fit-fill border ronded bg-primary text-white overflow-hidden" src="images/Kapsalon_dutch_meal.png" style="height: 12rem; object-fit: fill; text-align: center; line-height: 12rem;" alt="@product.ProductNaam" />
+                                <div class="position-relative card-body border-top" style="height: 16rem">
+                                    <h5 class="card-title fw-bold justify-content-start">@product.ProductNaam</h5>
                                         <input type="hidden" asp-for="@product.ProductId" />
+                                    <p class="card-text fst-italic justify-content-start">@product.AanbiederNaam </p>
                                     <p class="card-text">@product.Productbeschrijving </p>
-                                    <p class="card-text">@product.AanbiederNaam </p>
-                                    <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#Item1" aria-expanded="false" aria-controls="collapseExample">+</button>
+
+                                            <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#@product.ProductNaam" aria-expanded="false" aria-controls="collapseExample">+</button>
                                 </div>
                                 <div class="p-3">
-                                    <div class="collapse mt-3" id="Item1">
+                                            <div class="collapse mt-3" id="@product.ProductNaam">
                                         <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
                                         <div class="m-2 border-top border-bottom">
                                             <!-- Subkeuzes opties -->
@@ -83,9 +85,9 @@
                                     </div>
                                 </div>
                             </div>
-
+                            </form>
                         </div>
-                        </form>
+                        
                     }
                     </div>
                 </div>
@@ -93,12 +95,12 @@
              
         </div>
     </div>
-</div>
+
     <!-- winkelmandje -->
     <div class="flex-shrink-0 border-start border-end bg-white collapse shadow" id="winkelmand" style="width: 40%">
         <div class="d-flex flex-row justify-content-between ps-5 pe-5 pt-4">
             <p class="h1">Winkelmand</p>
-            <button class="btn btn-outline-primary mb-4">bestelling herhalen</button>
+            <button class="btn visually-hidden btn-outline-primary mb-4">bestelling herhalen</button>
         </div>
         <div class=" ps-5 border-top border-1 border-dark">
             <!-- winkelmand item 1 -->
@@ -165,5 +167,4 @@
 
         </div>
     </div>
-
-
+</div>

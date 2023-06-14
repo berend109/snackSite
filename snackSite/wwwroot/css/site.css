@@ -20,3 +20,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.bg-primary {
+    background-color: #05005e !important;
+}
+.btn-primary {
+    background-color: #05005e !important;
+    border: 1px solid #05005e !important;
+}
+
+.btn-outline-primary {
+    color: #05005e !important;
+    border-color: #05005e !important;
+}
+.btn-outline-primary:hover {
+    color: white !important;
+    background-color: #05005e !important;
+    border-color: #05005e !important;
+}
