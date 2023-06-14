@@ -8,21 +8,15 @@ namespace snackSite.Pages;
 public class Bestellijst : PageModel
 {
     public IEnumerable<Bestelling> Besteld { get; set; } = null!;
+    public IEnumerable<Bestelling> Week { get; set; } = null!;
 
     public void OnGet()
     {
         Besteld = new BestellingRepository().GetBesteld();
-        
+        //Week = new BestellingRepository().GetDatum(week);
+
 
     }
 
-    public IActionResult OnPost()
-    {
-        if (!ModelState.IsValid)
-        {
-            return Page();
-        }
-        
-        return Redirect("../Bestellijst");
-    }
+    
 }

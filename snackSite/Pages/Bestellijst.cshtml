@@ -18,10 +18,14 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var date in tableDatw)
-    {
-     
-    }
+    @*<select class="form-select">
+        <option asp-for="week.Week" selected>none</option>
+
+        @foreach (var week in Model.Week)
+        {
+            <option value="@week.Week">@week.Week</option>
+        }
+    </select>*@
     @foreach (var Bestelling in Model.Besteld)
     {
         string prevGebruikersNaam = String.Empty;

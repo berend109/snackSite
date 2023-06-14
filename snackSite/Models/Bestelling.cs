@@ -9,6 +9,7 @@ public class Bestelling
     
     [Required, Range(0, 99.99)]
     public decimal TotaalPrijs { get; set; }
+    public DateTime Week { get; set; }
   
     
     public List<Gebruiker> Gebruikers { get; set; } = new List<Gebruiker>();

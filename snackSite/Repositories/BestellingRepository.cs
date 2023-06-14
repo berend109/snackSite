@@ -52,11 +52,11 @@ public class BestellingRepository
         return true;
     }
 
-    public IEnumerable<Bestelling> GetDatum(DateTime name)
+    public IEnumerable<Bestelling> GetDatum(DateTime week)
     {
         string sql = @"SELECT * FROM bestelling WHERE DatumWeek = @Datumweek";
         using var connection = GetConnection();
-        var Datum = connection.Query<Bestelling>(sql, name);
+        var Datum = connection.Query<Bestelling>(sql, week);
         return Datum;
     }
     public IEnumerable<Bestelling> GetBesteld()
