@@ -52,6 +52,13 @@ public class BestellingRepository
         return true;
     }
 
+    public IEnumerable<Bestelling> GetDatum(DateTime name)
+    {
+        string sql = @"SELECT * FROM bestelling WHERE DatumWeek = @Datumweek";
+        using var connection = GetConnection();
+        var Datum = connection.Query<Bestelling>(sql, name);
+        return Datum;
+    }
     public IEnumerable<Bestelling> GetBesteld()
     {
         string sql = @"select * FROM bestelling b
@@ -59,7 +66,7 @@ public class BestellingRepository
                        LEFT JOIN product p on hb.ProductId = p.ProductId
                        LEFT JOIN opties o on hb.OptieId = o.OptieId
                        LEFT JOIN gebruiker g on hb.GebruikerId = g.GebruikerId
-                       Where b.BestellingId = hb.BestellingId
+                       Where b.BestellingId = hb.BestellingId 
                        order by hb.gebruikerId             
                        ";
         

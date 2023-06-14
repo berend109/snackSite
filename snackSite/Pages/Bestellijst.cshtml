@@ -1,6 +1,7 @@
 ﻿@page
 @using snackSite.Models
 @model snackSite.Pages.Bestellijst
+<
 <div class="container p-2 pt-4 pb-4">
 <table class="table table-striped">
     <tbody>
@@ -17,6 +18,10 @@
     </tr>
     </thead>
     <tbody>
+    @foreach (var date in tableDatw)
+    {
+     
+    }
     @foreach (var Bestelling in Model.Besteld)
     {
         string prevGebruikersNaam = String.Empty;
@@ -29,7 +34,7 @@
                     {
                         <p>@gebruiker.Naam</p>
                     }
-                   
+
                     prevGebruikersNaam = gebruiker.Naam;
                 }
             </td>

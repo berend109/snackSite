@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using snackSite.Models;
 using snackSite.Repositories;
 
@@ -13,5 +14,15 @@ public class Bestellijst : PageModel
         Besteld = new BestellingRepository().GetBesteld();
         
 
+    }
+
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+        
+        return Redirect("../Bestellijst");
     }
 }
