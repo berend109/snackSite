@@ -10,10 +10,10 @@ public class Bestellijst : PageModel
     public IEnumerable<Bestelling> Besteld { get; set; } = null!;
     public IEnumerable<Bestelling> Week { get; set; } = null!;
 
-    public void OnGet()
+    public void OnGet(DateTime week)
     {
         Besteld = new BestellingRepository().GetBesteld();
-        //Week = new BestellingRepository().GetDatum(week);
+        Week = new BestellingRepository().GetDatum(week);
 
 
     }
