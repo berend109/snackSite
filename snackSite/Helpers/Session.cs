@@ -15,15 +15,15 @@ public class Session : Controller
     {
         if (!CheckIfLoggedIn(user)) return 0;
         if (user == null) return 0; // this is for safety just in case
-        var userObject = JsonConvert.DeserializeObject<User>(user);
-        return userObject.IsAdmin = 0;
+        var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
+        return userObject.Adminrole = 0;
     }
 
     public int CheckIfAdmin(string? user)
     {
         if (!CheckIfLoggedIn(user)) return 0;
         if (user == null) return 0; // this is for safety just in case
-        var userObject = JsonConvert.DeserializeObject<User>(user);
-        return userObject.IsAdmin = 1;
+        var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
+        return userObject.Adminrole = 1;
     }
 }

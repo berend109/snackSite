@@ -7,7 +7,7 @@ namespace snackSite.Pages
 {
     public class IndexModel : PageModel
     {
-        private bool OptionSelected = false;
+        private bool OptionSelected { get; set; }
 
         public Aanbieder Aanbieder { get; set; }
 

@@ -11,7 +11,7 @@ public class UserRepository
         return new DbUtils().GetDbConnection();
     }
 
-    public User Add(string username, string password, string email)
+    public Gebruiker Add(string username, string password, string email)
     {
         using var connection = GetConnection();
         int Budget = 0, BudgetLimit = 0, Adminrole = 0;
@@ -19,17 +19,17 @@ public class UserRepository
                         SELECT * FROM gebruiker WHERE GebruikerId = LAST_INSERT_ID()";
 
         var parameters = new { Name = username, Password = password, Email = email, Adminrole = Adminrole, Budget, BudgetLimit };
-        var user = connection.QuerySingle<User>(sql, parameters);
+        var user = connection.QuerySingle<Gebruiker>(sql, parameters);
         return user;
     }
 
-    public static User Get(string? email)
+    public static Gebruiker Get(string? email)
     {
         using var connection = GetConnection();
         const string sql = @"SELECT * FROM gebruiker WHERE Email = @Email";
         var parameters = new { email };
 
-        var user = connection.QuerySingleOrDefault<User>(sql, parameters);
+        var user = connection.QuerySingleOrDefault<Gebruiker>(sql, parameters);
         return user;
     }
 }

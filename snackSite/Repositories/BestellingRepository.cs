@@ -51,12 +51,11 @@ public class BestellingRepository
         return true;
     }
 
-    public IEnumerable<Bestelling> GetBesteld()
-    {
-        string sql = @"select * FROM bestelling b
-                       Left Join heeftbesteld hb on hb.BestellingId = b.BestellingId
-                       Where b.BestellingId = hb.BestellingId";
-        
-    }
+    // public IEnumerable<Bestelling> GetBesteld()
+    // {
+    //     string sql = @"select * FROM bestelling b
+    //                    Left Join heeftbesteld hb on hb.BestellingId = b.BestellingId
+    //                    Where b.BestellingId = hb.BestellingId";
+    // }
 
 }
