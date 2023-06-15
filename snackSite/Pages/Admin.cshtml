@@ -30,9 +30,8 @@
 				<div class="collapse" id="gebruiker-db">
 					<div class="row">
                         <div class="col">
-                            <h1>Display gebruikers</h1>
-                    
-                            <a asp-page="CRUDGebruikers/Create" class="btn btn-primary">Create New Gebruiker</a>
+
+	                        <a asp-page="Crud/CRUDGebruikers/Create" class="btn btn-primary">Create New Gebruiker</a>
                             <hr>
                             <table class="table table-striped">
                                 <tbody>
@@ -66,8 +65,8 @@
 												</td>
 
                                             <td>
-                                                <a asp-page="CRUDGebruikers/Delete" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-danger">Delete</a> |
-                                                <a asp-page="CRUDGebruikers/Update" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-info">Update</a>
+                                                <a asp-page="Crud/CRUDGebruikers/Delete" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-danger">Delete</a> |
+                                                <a asp-page="Crud/CRUDGebruikers/Update" asp-route-gebruikerId="@gebruikers.GebruikerId" class="btn btn-info">Update</a>
                                             </td>
                                         </tr>
                                         }
@@ -92,7 +91,7 @@
 
 				</a>
 				<div class="collapse" id="Producten-db">
-					<a asp-page="CRUDProducten/Create" class="btn btn-primary mt-2">Create New Product</a>
+					<a asp-page="Crud/CRUDProducten/Create" class="btn btn-primary mt-2">Create New Product</a>
 					<hr>
 					<table class="table table-striped">
 						<tbody>
@@ -121,8 +120,8 @@
 
 
 								<td>
-									<a asp-page="CRUDProducten/Delete" asp-route-productId="@producten.ProductId" class="btn btn-danger">Delete</a> |
-									<a asp-page="CRUDProducten/Update" asp-route-productId="@producten.ProductId" class="btn btn-info">Update</a>
+									<a asp-page="Crud/CRUDProducten/Delete" asp-route-productId="@producten.ProductId" class="btn btn-danger">Delete</a> |
+									<a asp-page="Crud/CRUDProducten/Update" asp-route-productId="@producten.ProductId" class="btn btn-info">Update</a>
 								</td>
 							</tr>
 						}
@@ -137,7 +136,7 @@
 					<div class="h1" style="margin-bottom: -4px; rotate: 180deg;"> ^ </div>
 			</a>
 			<div class="collapse" id="optie-db">
-				<a asp-page="CRUDOPTIES/Create" class="btn btn-primary mt-2">Create New Optie</a>
+				<a asp-page="Crud/CRUDOPTIES/Create" class="btn btn-primary mt-2">Create New Optie</a>
 				<hr>
 				<table class="table table-striped">
 					<tbody>
@@ -165,8 +164,8 @@
 
 
 							<td>
-								<a asp-page="CRUDOPTIES/Delete" asp-route-OptieId="@Optie.OptieId" class="btn btn-danger">Delete</a> |
-								<a asp-page="CRUDOPTIES/Update" asp-route-OptieId="@Optie.OptieId" class="btn btn-info">Update</a>
+								<a asp-page="Crud/CRUDOPTIES/Delete" asp-route-OptieId="@Optie.OptieId" class="btn btn-danger">Delete</a> |
+								<a asp-page="Crud/CRUDOPTIES/Update" asp-route-OptieId="@Optie.OptieId" class="btn btn-info">Update</a>
 							</td>
 						</tr>
 					}
