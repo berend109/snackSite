@@ -12,7 +12,7 @@ public class Create : PageModel
 
     public void OnGet()
     {
-        Aanbieders = new AanbiedersRepository().GetAanbieder();
+        
     }
 
     public IActionResult OnPost(Product product)
@@ -24,11 +24,11 @@ public class Create : PageModel
         
         var createdProduct = new ProductenRepository().Add(Product);
         // var aanbieder = new ProductenRepository().AddHeeftEenProduct(aanbiederId, createdProduct.ProductId);
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return Redirect("../Admin");
+        return Redirect("/Admin");
     }
 }

@@ -23,11 +23,11 @@ public class Update : PageModel
 
         var updatedProduct = new GebruikersRepository().Update(gebruiker);
 
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 }

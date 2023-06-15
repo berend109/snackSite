@@ -18,11 +18,11 @@ public class Delete : PageModel
     public IActionResult OnPostDelete([FromRoute] int productId)
     {
         bool success = new ProductenRepository().Delete(productId);
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 }
