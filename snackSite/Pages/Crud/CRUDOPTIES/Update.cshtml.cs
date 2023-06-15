@@ -23,11 +23,11 @@ public class Update : PageModel
 
         var updatedOptie = new OptieRepository().Update(optie);
 
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 
     public IActionResult OnPostCancel()
     {
-        return RedirectToPage("../Admin");
+        return RedirectToPage("/Admin");
     }
 }
