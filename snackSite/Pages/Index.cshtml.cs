@@ -25,15 +25,28 @@ namespace snackSite.Pages
             _logger = logger;
         }
 
-        public IActionResult OnGet(string? searchTerm = null)
+        public IActionResult OnGet(string? searchTerm = null, string? searchTerm2 = null)
         {
             Producten = new ProductenRepository().GetProduct();
             Opties = new OptieRepository().GetOptie();
 
+            
+
             if (!string.IsNullOrEmpty(searchTerm))
             {
                 Producten = Producten.Where(Producten => Producten.ProductNaam.Contains(searchTerm));
+                
+                
             }
+
+            if (!string.IsNullOrEmpty(searchTerm2))
+            {
+                Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm2));
+            }
+            // if (!string.IsNullOrEmpty(searchTerm))
+            // {
+            //     Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm)); 
+            // }
 
             return Page();
         }
