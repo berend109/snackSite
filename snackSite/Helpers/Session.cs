@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using snackSite.Models;
 
-namespace snackSite.Helper
+namespace snackSite.Helpers
 {
 	public class Session : Controller
 	{
