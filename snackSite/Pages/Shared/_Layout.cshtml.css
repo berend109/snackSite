@@ -51,7 +51,7 @@ button.accept-policy {
 /*banner style*/
 
 #banner-image-snacksite-photo {
-    background-image: url("images/Kapsalon_dutch_meal.png");
+    background-image: url("https://media.discordapp.net/attachments/793815094895181875/1118826085304516659/Kapsalon-1.jpg?width=1280&height=670");
     overflow: hidden;
     width: 100%;
     background-position: 50% 50%;
@@ -89,3 +89,4 @@ button.accept-policy {
     font-size: 30px;
     padding: 0px 20px;
 }
+
