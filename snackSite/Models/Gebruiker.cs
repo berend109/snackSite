@@ -9,7 +9,7 @@ public class Gebruiker
 	[Required, MinLength(2), MaxLength(128)]
 	public string Naam { get; set; } = null!;
 
-	public string Wachtwoord { get; set; } = null!;
+	public string? Wachtwoord { get; set; } = null!;
 
 	public string Email { get; set; } = null!;
 
@@ -17,5 +17,4 @@ public class Gebruiker
 	public decimal Budget { get; set; }
 
 	public int Adminrole { get; set; }
-
 }

@@ -4,14 +4,14 @@ using snackSite.Models;
 
 namespace snackSite.Repositories;
 
-public class UserRepository
+public abstract class UserRepository
 {
     private static IDbConnection GetConnection()
     {
         return new DbUtils().GetDbConnection();
     }
 
-    public Gebruiker Add(string username, string password, string email)
+    public static Gebruiker Add(string username, string password, string email)
     {
         using var connection = GetConnection();
         int Budget = 0, BudgetLimit = 0, Adminrole = 0;

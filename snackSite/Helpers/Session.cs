@@ -2,28 +2,30 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using snackSite.Models;
 
-namespace snackSite.Helper;
-
-public class Session : Controller
+namespace snackSite.Helper
 {
-    public bool CheckIfLoggedIn(string? user)
-    {
-        return null != user;
-    }
+	public class Session : Controller
+	{
+		public bool CheckIfLoggedIn(string? user)
+		{
+			return null != user;
+		}
 
-    public int CheckIfAuthorized(string? user)
-    {
-        if (!CheckIfLoggedIn(user)) return 0;
-        if (user == null) return 0; // this is for safety just in case
-        var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
-        return userObject.Adminrole = 0;
-    }
+		public int CheckIfModerator(string? user)
+		{
+			if (!CheckIfLoggedIn(user)) return 0;
+			if (user == null) return 0;
+			var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
+			if (userObject != null) return userObject.Adminrole = 1;
+			return 0;
+		}
 
-    public int CheckIfAdmin(string? user)
-    {
-        if (!CheckIfLoggedIn(user)) return 0;
-        if (user == null) return 0; // this is for safety just in case
-        var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
-        return userObject.Adminrole = 1;
-    }
+		public int GetUserId(string? user) 
+		{
+			if (!CheckIfLoggedIn(user)) return 0;
+			if (user == null) return 0;
+			var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
+			return userObject?.GebruikerId ?? 0;
+		}
+	}
 }
