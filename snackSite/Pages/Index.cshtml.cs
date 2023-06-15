@@ -31,12 +31,13 @@ namespace snackSite.Pages
             Opties = new OptieRepository().GetOptie();
 
             
-
+            //Searchbar
             if (!string.IsNullOrEmpty(searchTerm))
             {
-                Producten = Producten.Where(Producten => Producten.ProductNaam.Contains(searchTerm));
-                
-                
+                Producten = Producten.Where(Producten => (Producten.ProductNaam.Contains(searchTerm)) || (Producten.AanbiederNaam.Contains(searchTerm)));
+                //Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm));
+
+
             }
 
             if (!string.IsNullOrEmpty(searchTerm2))
