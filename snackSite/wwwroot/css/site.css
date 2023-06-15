@@ -38,3 +38,18 @@ body {
     background-color: #05005e !important;
     border-color: #05005e !important;
 }
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #05005e !important;
+    border-color: #05005e !important;
+}
+
+.btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
+    box-shadow: 0 0 0 .25rem rgba(13,110,253,.5)
+}
+
+.btn-check:active + .btn-outline-primary, .btn-check:checked + .btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
+    color: #fff;
+    background-color: #05005e !important;
+    border-color: #05005e !important;
+}
