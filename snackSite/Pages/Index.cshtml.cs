@@ -35,15 +35,15 @@ namespace snackSite.Pages
             if (!string.IsNullOrEmpty(searchTerm))
             {
                 Producten = Producten.Where(Producten => (Producten.ProductNaam.Contains(searchTerm)) || (Producten.AanbiederNaam.Contains(searchTerm)));
-                //Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm));
-
-
             }
 
-            if (!string.IsNullOrEmpty(searchTerm2))
-            {
-                Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm2));
-            }
+            
+            //oude code bedoelt voor de tijdelijke 2de Searchbar.
+            //if (!string.IsNullOrEmpty(searchTerm2))
+            //{
+            //    Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm2));
+            //}
+            
             // if (!string.IsNullOrEmpty(searchTerm))
             // {
             //     Producten = Producten.Where(Producten => Producten.AanbiederNaam.Contains(searchTerm)); 
