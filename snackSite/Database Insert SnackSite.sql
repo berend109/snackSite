@@ -32,7 +32,8 @@ CREATE TABLE Opties(
 
 CREATE TABLE Bestelling (
                             BestellingId INTEGER auto_increment PRIMARY KEY,
-                            TotaalPrijs DECIMAL(10,2)
+                            TotaalPrijs DECIMAL(10,2),
+                            DatumWeek DATE NOT NULL
 );
 
 
@@ -56,6 +57,7 @@ CREATE TABLE HeeftBesteld(
                              FOREIGN KEY (BestellingId) REFERENCES Bestelling(BestellingId),
                              CONSTRAINT PK_HeeftBesteld PRIMARY KEY (ProductId, BestellingId)
 );
+
 
 CREATE TABLE HeeftEenBestelling
 (
@@ -119,20 +121,31 @@ INSERT INTO Opties (OptieNaam, OptieBeschrijving, OptiePrijs, OptieCategorie)
 VALUES ('Extra toppings', 'Voeg extra toppings toe aan de snack', 0.75, 'FrituurSnack');
 
 -- TABLE Bestelling
-INSERT INTO Bestelling (totaalPrijs)
-VALUES (9.99);
+INSERT INTO Bestelling (totaalPrijs, DatumWeek)
+VALUES (9.99,'2008-11-11');
 
-INSERT INTO Bestelling (totaalPrijs)
-VALUES (4.95);
+INSERT INTO Bestelling (totaalPrijs, DatumWeek)
+VALUES (4.95,'2008-11-11');
 
-INSERT INTO Bestelling (totaalPrijs)
-VALUES (12.50);
+INSERT INTO Bestelling (totaalPrijs, DatumWeek)
+VALUES (12.50,'2008-11-11');
 
-INSERT INTO Bestelling (totaalPrijs)
-VALUES (2.99);
+INSERT INTO Bestelling (totaalPrijs, DatumWeek)
+VALUES (2.99,'2008-11-11');
 
-INSERT INTO Bestelling (totaalPrijs)
-VALUES (7.50);
+INSERT INTO Bestelling (totaalPrijs, DatumWeek)
+VALUES (7.50,'2008-11-11');
+
+-- Table heeftBesteld
+
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (1,1,1,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (2,3,1,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (2,1,3,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (4,1,3,1);
 
 
 

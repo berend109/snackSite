@@ -16,4 +16,42 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Crud" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Pages\Crud\CRUDAanbieders\Create.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDAanbieders\Delete.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDAanbieders\Index.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDAanbieders\Update.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDGebruikers\Create.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDGebruikers\Delete.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDGebruikers\Index.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDGebruikers\Update.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDOPTIES\Create.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDOPTIES\Delete.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDOPTIES\Index.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDOPTIES\Update.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDProducten\Create.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDProducten\Delete.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDProducten\Index.cshtml" />
+    <AdditionalFiles Include="Pages\Crud\CRUDProducten\Update.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\CRUDGebruikers\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDGebruikers\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDGebruikers\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDGebruikers\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDOPTIES\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDOPTIES\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDOPTIES\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDOPTIES\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Update.cshtml" />
+  </ItemGroup>
+
 </Project>
