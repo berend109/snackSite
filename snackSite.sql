@@ -36,7 +36,7 @@ CREATE TABLE Opties(
   OptieId INTEGER auto_increment PRIMARY KEY,
   OptieNaam VARCHAR(255) NOT NULL,
   OptieBeschrijving VARCHAR(255),
-  OptiePrijs DECIMAL NOT NULL
+  OptiePrijs DECIMAL(5,2) NOT NULL
 );
 
 CREATE TABLE Aanbieder(
