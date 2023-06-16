@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using snackSite.Models;
 using snackSite.Repositories;
@@ -16,7 +15,5 @@ namespace snackSite.Pages
             Opties = new OptieRepository().GetOptie();
             Gebruikers = new GebruikersRepository().GetGebruiker();
         }
-       
-        
     }
 }

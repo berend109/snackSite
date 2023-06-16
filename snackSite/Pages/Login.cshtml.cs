@@ -1,24 +1,52 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using snackSite.Repositories;
+using snackSite.Helpers;
+using Newtonsoft.Json;
 
-namespace snackSite.Pages
+namespace snackSite.Pages;
+
+public class Login : PageModel
 {
-    public class Login : PageModel
+    private readonly ILogger<Login>? _logger;
+
+    [BindProperty] 
+    public string? Email { get; set; }
+    [BindProperty] 
+    public string? Password { get; set; }
+
+    public IActionResult OnGet()
     {
-        private readonly ILogger<Login> _logger;
+        var session = new Session();
+        bool Gebruiker = session.CheckIfLoggedIn(HttpContext.Session.GetString("user"));
 
-        public Login(ILogger<Login> logger)
-        {
-            _logger = logger;
-        }
+        if (Gebruiker)
+            return Redirect("/Index");
 
-        public void OnGet()
+        return Page();
+    }
+
+    public IActionResult OnPost()
+    {
+        if (Password == "test")
         {
+            var tempPassword = Hash.HashedPassword(Password);
+            // make test user
+            UserRepository.Add("test", tempPassword, Email);
+
+            return Redirect("/index");
         }
+        
+        var gebruiker = UserRepository.Get(Email);
+        if ((gebruiker != null) && (Hash.HashedPassword(Password) == gebruiker.Wachtwoord))
+        {
+            gebruiker.Wachtwoord = null;
+
+            string Gebruiker = JsonConvert.SerializeObject(gebruiker);
+            HttpContext.Session.SetString("gebruiker", Gebruiker);
+
+            return Redirect("/index");
+        }
+        return Page();
     }
 }

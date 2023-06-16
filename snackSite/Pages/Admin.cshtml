@@ -1,6 +1,4 @@
-﻿@page
-@using snackSite.Pages.CRUDProducten
-@using snackSite.Models
+@page
 @model snackSite.Pages.AdminModel
 @{
 }
@@ -54,7 +52,12 @@
                                             <td>@gebruikers.Naam</td>
 	                                        <td>@gebruikers.Email</td>
 											<td>@gebruikers.Budget</td>
-												<td>@if (gebruikers.Adminrole)
+												<!-- 
+												Convert.ToBoolean omdat in db een int is.
+												Liefst zal dit ook een boolean zijn in de db.
+												Keuzes
+												-->
+												<td>@if (Convert.ToBoolean(gebruikers.Adminrole))
 													{
 														<p>Ja</p>
 													}
