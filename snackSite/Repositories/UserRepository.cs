@@ -28,7 +28,8 @@ public abstract class UserRepository
         string sql = @"INSERT INTO gebruiker (Naam, Wachtwoord, Email, Adminrole, Budget, BudgetLimit) VALUES (@Naam, @Wachtwoord, @Email, @Adminrole, @Budget, @BudgetLimit);
                         SELECT * FROM gebruiker WHERE GebruikerId = LAST_INSERT_ID()";
 
-        var parameters = new { Naam = username, Wachtwoord = password, Email = email, Adminrole, Budget, BudgetLimit };
+        var parameters = new { Naam = username, Wachtwoord = password, Email = 
+			email, Adminrole, Budget, BudgetLimit };
         Gebruiker user = connection.QuerySingle<Gebruiker>(sql, parameters);
         return user;
     }
@@ -39,7 +40,8 @@ public abstract class UserRepository
         const string sql = @"SELECT * FROM gebruiker WHERE Email = @Email";
         var parameters = new { email };
 
-        Gebruiker user = connection.QuerySingleOrDefault<Gebruiker>(sql, parameters);
+        Gebruiker user = connection.QuerySingleOrDefault<Gebruiker>(
+			sql, parameters);
         return user;
     }
 }
