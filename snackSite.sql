@@ -18,7 +18,7 @@ CREATE TABLE Product(
   ProductId INTEGER auto_increment PRIMARY KEY,
   ProductNaam varchar(255) NOT NULL,
   Productbeschrijving varchar(255),
-  ProductPrijs DECIMAL NOT NULL,
+  ProductPrijs DECIMAL(5,2) NOT NULL,
   ProductCategorie VARCHAR(255) NOT NULL,
   Vegan BOOLEAN,
   Vega BOOLEAN
@@ -76,7 +76,6 @@ CREATE TABLE HeeftEenBestelling
   FOREIGN KEY (GebruikerId) REFERENCES Gebruiker (GebruikerId),
   CONSTRAINT PK_HeeftEenBestelling PRIMARY KEY (BestellingId,GebruikerId)
 );
-
 
 
 -- TABLE Gebruiker
