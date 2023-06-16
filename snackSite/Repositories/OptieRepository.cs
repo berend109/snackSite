@@ -31,8 +31,8 @@ public class OptieRepository
     public Optie Add (Optie? opties)
     {
         string sql = @"
-                INSERT INTO opties (OptieNaam, Optiebeschrijving, OptiePrijs, OptieCategorie)
-                VALUES (@OptieNaam, @OptieBeschrijving, @OptiePrijs, @OptieCategorie);  
+                INSERT INTO opties (OptieNaam, Optiebeschrijving, OptiePrijs)
+                VALUES (@OptieNaam, @OptieBeschrijving, @OptiePrijs);  
                 SELECT * FROM opties WHERE OptieId = LAST_INSERT_ID()";
             
         using var connection = GetConnection();
@@ -55,7 +55,6 @@ public class OptieRepository
                 OptieNaam = @OptieNaam,
                 OptieBeschrijving = @OptieBeschrijving,
                 OptiePrijs = @OptiePrijs,
-                OptieCategorie = @OptieCategorie
                 WHERE OptieId = @optieId;
                 SELECT * FROM opties WHERE OptieId = @optieId";
 
