@@ -28,16 +28,21 @@ public class Login : PageModel
 
     public IActionResult OnPost()
     {
-        if (Password == "test")
+        var gebruiker = UserRepository.Get(Email);
+        
+        if (gebruiker == null)
         {
-            var tempPassword = Hash.HashedPassword(Password);
-            // make test user
-            UserRepository.Add("test", tempPassword, Email);
+            if (Password == "test")
+            {
+                var tempPassword = Hash.HashedPassword(Password);
+                // make test user
+                UserRepository.Add("test", tempPassword, Email);
 
-            return Redirect("/index");
+                return Redirect("/index");
+            }
+            return Page();
         }
         
-        var gebruiker = UserRepository.Get(Email);
         if ((gebruiker != null) && (Hash.HashedPassword(Password) == gebruiker.Wachtwoord))
         {
             gebruiker.Wachtwoord = null;
