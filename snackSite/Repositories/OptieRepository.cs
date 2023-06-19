@@ -54,7 +54,7 @@ public class OptieRepository
                 UPDATE opties SET 
                 OptieNaam = @OptieNaam,
                 OptieBeschrijving = @OptieBeschrijving,
-                OptiePrijs = @OptiePrijs,
+                OptiePrijs = @OptiePrijs
                 WHERE OptieId = @optieId;
                 SELECT * FROM opties WHERE OptieId = @optieId";
 
