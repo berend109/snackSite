@@ -13,53 +13,35 @@ create table Gebruiker (
 	 Adminrole boolean NOT NULL
 );
 
-CREATE TABLE Aanbieders (
-	AanbiederId INT AUTO_INCREMENT PRIMARY KEY,
-	AanbiederNaam VARCHAR(50) NOT NULL,
-	AanbiederLocatie VARCHAR(50)
+CREATE TABLE Product(
+	 ProductId INTEGER auto_increment PRIMARY KEY,
+	 ProductNaam varchar(255) NOT NULL,
+	 Productbeschrijving varchar(255),
+	 ProductPrijs DECIMAL(10,2) NOT NULL,
+	 ProductCategorie VARCHAR(255) NOT NULL,
+	 AanbiederNaam VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Product (
-	ProductId INT AUTO_INCREMENT PRIMARY KEY,
-	ProductNaam VARCHAR(50) NOT NULL,
-	Productbeschrijving VARCHAR(50),
-	ProductPrijs DECIMAL(8,2) NOT NULL,
-	ProductCategorie VARCHAR(50) NOT NULL,
-	AanbiederId INT NOT NULL,
-	INDEX(ProductCategorie),
-	INDEX(AanbiederId),
-	FOREIGN KEY (AanbiederId) REFERENCES Aanbieders (AanbiederId) ON DELETE CASCADE
-);
-
-CREATE TABLE Opties (
-	OptieId INT AUTO_INCREMENT PRIMARY KEY,
-	OptieNaam VARCHAR(50) NOT NULL,
-	OptieBeschrijving VARCHAR(50),
-	OptiePrijs DECIMAL(8,2) NOT NULL,
-	OptieCategorie VARCHAR(50) NOT NULL,
-	INDEX(OptieCategorie)
-);
-
--- CREATE TABLE HeeftOpties (
--- 	 OptieId INTEGER NOT NULL,
--- 	 ProductId INTEGER NOT NULL,
--- 	 FOREIGN KEY (OptieId) REFERENCES Opties (OptieId),
--- 	 FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
--- 	 CONSTRAINT PK_HeeftOpties PRIMARY KEY (OptieId, ProductId)
--- );
-
-CREATE TABLE HeeftOpties (
-    ProductId INT NOT NULL,
-    OptieId INT NOT NULL,
-    PRIMARY KEY (ProductId, OptieId),
-    FOREIGN KEY (ProductId) REFERENCES Product (ProductId) ON DELETE CASCADE,
-    FOREIGN KEY (OptieId) REFERENCES Opties (OptieId) ON DELETE CASCADE
+CREATE TABLE Opties(
+	 OptieId INTEGER auto_increment PRIMARY KEY,
+	 OptieNaam VARCHAR(255) NOT NULL,
+	 OptieBeschrijving VARCHAR(255),
+	 OptiePrijs DECIMAL(10,2) NOT NULL,
+	 OptieCategorie varchar(255) NOT NULL
 );
 
 CREATE TABLE Bestelling (
 	 BestellingId INTEGER auto_increment PRIMARY KEY,
-	 TotaalPrijs DECIMAL(9,2),
+	 TotaalPrijs DECIMAL(10,2),
 	 DatumWeek DATE NOT NULL
+);
+
+CREATE TABLE HeeftOpties(
+	 OptieId INTEGER NOT NULL,
+	 ProductId INTEGER NOT NULL,
+	 FOREIGN KEY (OptieId) REFERENCES Opties (OptieId),
+	 FOREIGN KEY (ProductId) REFERENCES Product (ProductId),
+	 CONSTRAINT PK_HeeftOpties PRIMARY KEY (OptieId, ProductId)
 );
 
 CREATE TABLE HeeftBesteld(
