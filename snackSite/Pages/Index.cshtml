@@ -37,10 +37,10 @@
                                     <p class="card-text fst-italic justify-content-start">@product.AanbiederNaam </p>
                                     <p class="card-text">@product.Productbeschrijving </p>
 
-                                            <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#@product.ProductNaam" aria-expanded="false" aria-controls="collapseExample">+</button>
+                                            <button class="position-absolute bottom-0 translate-middle-x btn btn-outline-primary w-75 fs-2 pt-0 pb-1" type="button" data-bs-toggle="collapse" data-bs-target="#@product.ProductNaam.Replace(" ","")" aria-expanded="false" aria-controls="collapseExample">+</button>
                                 </div>
                                 <div class="p-3">
-                                    <div class="collapse mt-3" id="@product.ProductNaam">
+                                    <div class="collapse mt-3" id="@product.ProductNaam.Replace(" ","")">
                                         <!-- de 'id' is belangrijk voor het subkeuze menu dat erbij hoort-->
                                         <div class="m-2 border-top border-bottom">
                                             <!-- Subkeuzes opties -->
