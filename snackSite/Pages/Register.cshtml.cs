@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using snackSite.Helpers;
 using snackSite.Models;
 using snackSite.Repositories;
@@ -26,12 +27,6 @@ public class Register : PageModel
        if (user != null && Gebruiker?.Wachtwoord != Gebruiker?.PasswordConfirm)
        {
            return Page();
-       }
-
-       if (Gebruiker.Naam == "test")
-       { 
-           UserRepository.Add("test", Hash.HashedPassword(Gebruiker.Wachtwoord), Gebruiker.Email); 
-           return Redirect("/Index");
        }
 
        UserRepository.Add(Gebruiker.Naam, Hash.HashedPassword(Gebruiker.Wachtwoord), Gebruiker.Email);
