@@ -11,21 +11,21 @@ namespace snackSite.Helpers
 			return null != user;
 		}
 
-		public int CheckIfModerator(string? user)
-		{
-			if (!CheckIfLoggedIn(user)) return 0;
-			if (user == null) return 0;
-			var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
-			if (userObject != null) return userObject.Adminrole = 1;
-			return 0;
-		}
-
 		public int GetUserId(string? user) 
 		{
 			if (!CheckIfLoggedIn(user)) return 0;
 			if (user == null) return 0;
 			var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
 			return userObject?.GebruikerId ?? 0;
+		}
+		
+		
+		public bool CheckAdmin(string? user)
+		{
+			if (!CheckIfLoggedIn(user)) return false;
+			if (user == null) return false;
+			var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
+			return userObject?.Adminrole == 1;
 		}
 	}
 }
