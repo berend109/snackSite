@@ -3,52 +3,33 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using snackSite.Repositories;
 using snackSite.Helpers;
 using Newtonsoft.Json;
+using snackSite.Models;
 
 namespace snackSite.Pages;
 
 public class Login : PageModel
 {
-    private readonly ILogger<Login>? _logger;
-
     [BindProperty] 
-    public string? Email { get; set; }
-    [BindProperty] 
-    public string? Password { get; set; }
-
+    public Gebruiker? Gebruiker { get; set; }
+    
     public IActionResult OnGet()
     {
         var session = new Session();
-        bool Gebruiker = session.CheckIfLoggedIn(HttpContext.Session.GetString("user"));
+        var gebruiker = session.CheckIfLoggedIn(HttpContext.Session.GetString("user"));
 
-        if (Gebruiker)
-            return Redirect("/Index");
-
-        return Page();
+        return gebruiker ? Redirect("/Index") : Page();
     }
 
     public IActionResult OnPost()
     {
-        var gebruiker = UserRepository.Get(Email);
-        
-        if (gebruiker == null)
-        {
-            if (Password == "test")
-            {
-                var tempPassword = Hash.HashedPassword(Password);
-                // make test user
-                UserRepository.Add("test", tempPassword, Email);
-
-                return Redirect("/index");
-            }
-            return Page();
-        }
-        
-        if ((gebruiker != null) && (Hash.HashedPassword(Password) == gebruiker.Wachtwoord))
+        var gebruiker = UserRepository.Get(Gebruiker?.Email);
+  
+        if ((gebruiker != null) && (Hash.HashedPassword(Gebruiker?.Wachtwoord) == gebruiker.Wachtwoord))
         {
             gebruiker.Wachtwoord = null;
 
-            string Gebruiker = JsonConvert.SerializeObject(gebruiker);
-            HttpContext.Session.SetString("gebruiker", Gebruiker);
+            var Gebruiker = JsonConvert.SerializeObject(gebruiker);
+            HttpContext.Session.SetString("user", Gebruiker);
 
             return Redirect("/index");
         }
