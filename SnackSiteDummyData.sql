@@ -69,11 +69,11 @@ VALUES (7.50,'2008-11-11');
 
  -- Table heeftBesteld
  
- INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
- VALUES (1,1,1,1);
- INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
- VALUES (2,3,1,1);
- INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
- VALUES (2,1,3,1);
-  INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
- VALUES (4,1,3,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (1,1,1,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (2,3,1,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (2,1,3,1);
+INSERT INTO HeeftBesteld (productId, bestellingId, optieId, gebruikerId)
+VALUES (4,1,3,1);
