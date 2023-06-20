@@ -20,5 +20,5 @@ public class Gebruiker
 	public decimal Budget { get; set; }
 	// 0 = user, 1 = admin
 	[Required]
-	public int Adminrole { get; set; }
+	public bool Adminrole { get; set; }
 }
