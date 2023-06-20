@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using snackSite.Helpers;
 using snackSite.Models;
 using snackSite.Repositories;
 
@@ -24,13 +25,20 @@ namespace snackSite.Pages
         {
             _logger = logger;
         }
-
+        
         public IActionResult OnGet(string? searchTerm = null, string? searchTerm2 = null)
         {
+            var session = new Session();
+            var gebruiker = session.CheckIfLoggedIn(HttpContext.Session.GetString("user"));
+            
+            if (!gebruiker)
+            {
+                return Redirect("/Login");
+            }
+            
             Producten = new ProductenRepository().GetProduct();
             Opties = new OptieRepository().GetOptie();
 
-            
             //Searchbar
             if (!string.IsNullOrEmpty(searchTerm))
             {
