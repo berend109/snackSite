@@ -22,13 +22,15 @@ public class Login : PageModel
 
     public IActionResult OnPost()
     {
-        var gebruiker = UserRepository.Get(Gebruiker?.Email);
+        var user = UserRepository.Get(Gebruiker?.Email);
   
-        if ((gebruiker != null) && (Hash.HashedPassword(Gebruiker?.Wachtwoord) == gebruiker.Wachtwoord))
+        // Check if user exists and if the password is correct
+        // If so, set the password to null and store the user in the session
+        if ((user != null) && (Hash.HashedPassword(Gebruiker?.Wachtwoord) == user.Wachtwoord))
         {
-            gebruiker.Wachtwoord = null;
+            user.Wachtwoord = null;
 
-            var Gebruiker = JsonConvert.SerializeObject(gebruiker);
+            var Gebruiker = JsonConvert.SerializeObject(user);
             HttpContext.Session.SetString("user", Gebruiker);
 
             return Redirect("/index");

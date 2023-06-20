@@ -12,7 +12,7 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
- 
+
 Program.Configuration = app.Configuration;
 
 app.UseHttpsRedirection();

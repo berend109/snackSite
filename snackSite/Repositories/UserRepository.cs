@@ -22,9 +22,10 @@ public class UserRepository
         // to make a default root user as the db can be empty
         if (email == "test@test.nl") { adminrole = true; }
         
-        const string sql = @"INSERT INTO gebruiker (Naam, Wachtwoord, Email, Adminrole, Budget) 
-                        VALUES (@Naam, @Wachtwoord, @Email, @Adminrole, @Budget);
-                        SELECT * FROM gebruiker WHERE GebruikerId = LAST_INSERT_ID()";
+        const string sql = 
+			@"INSERT INTO gebruiker (Naam, Wachtwoord, Email, Adminrole, Budget) 
+            VALUES (@Naam, @Wachtwoord, @Email, @Adminrole, @Budget);
+            SELECT * FROM gebruiker WHERE GebruikerId = LAST_INSERT_ID()";
 
         var parameters = new { 
             Naam = username, 
