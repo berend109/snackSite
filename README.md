@@ -53,19 +53,11 @@ app.UseSession();
 ```c#
     public int GetUserId(string? user) 
     {
-        if (!CheckIfLoggedIn(user)) return 0;
         if (user == null) return 0;
+        if (!CheckIfLoggedIn(user)) return 0;
         // JsonConvert is een voorbeeld van Newtonsoft.Json functie
         -- > var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
         return userObject?.GebruikerId ?? 0;
-    }
-    
-    public bool CheckAdmin(string? user)
-    {
-        if (!CheckIfLoggedIn(user)) return false;
-        if (user == null) return false;
-        --> var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
-        return userObject?.Adminrole == true;
     }
 ```
 
@@ -91,8 +83,8 @@ app.UseSession();
 ```c#
     public static string HashedPassword(string? password)
     {
-        using var sha256 = SHA256.Create();
         if (password == null) return "";
+        using var sha256 = SHA256.Create();
         var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
         return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
     }
@@ -110,16 +102,16 @@ app.UseSession();
 
     public int GetUserId(string? user)
     {
-        if (!CheckIfLoggedIn(user)) return 0;
         if (user == null) return 0;
+        if (!CheckIfLoggedIn(user)) return 0;
         var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
         return userObject?.GebruikerId ?? 0;
     }
 
     public bool CheckAdmin(string? user)
     {
-        if (!CheckIfLoggedIn(user)) return false;
         if (user == null) return false;
+        if (!CheckIfLoggedIn(user)) return false;
         var userObject = JsonConvert.DeserializeObject<Gebruiker>(user);
         return userObject?.Adminrole == true;
     }
