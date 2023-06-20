@@ -27,14 +27,11 @@ namespace snackSite.Pages
 
         public IActionResult OnPost()
         {
-            if (Budget.BudgetPrice <= 0)
+            if (Budget.BudgetPrice > 0)
             {
-                ModelState.AddModelError("Gebruiker.Budget", "Budget mag niet negatief zijn");
-                Redirect("/Admin");
+                BudgetRepository.UpdateBudget(Budget.BudgetPrice);
             }
 
-            BudgetRepository.UpdateBudget(Budget.BudgetPrice);
-            
             // refresh page
             return Redirect("/Admin");
         }
