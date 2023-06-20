@@ -14,6 +14,10 @@
                 <input asp-for="Gebruiker.Wachtwoord" class="form-control" />
                 <span asp-validation-for="Gebruiker.Wachtwoord"></span>
 
+                <label asp-for="Gebruiker.PasswordConfirm">Wachtwoord bevestiging:</label>
+                <input asp-for="Gebruiker.PasswordConfirm" class=" form-control" />
+                <span asp-validation-for="Gebruiker.PasswordConfirm"></span>
+
                 <label asp-for="Gebruiker.Email">Email:</label>
                 <input asp-for="Gebruiker.Email" class="form-control" />
                 <span asp-validation-for="Gebruiker.Email"></span>
@@ -36,3 +40,4 @@
 </div>
 
 
+                

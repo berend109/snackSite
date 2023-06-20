@@ -12,9 +12,14 @@
                 <span asp-validation-for="Gebruiker.Naam"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Gebruiker.Wachtwoord">Beschrijving:</label>
+                <label asp-for="Gebruiker.Wachtwoord">Wachtwoord:</label>
                 <input asp-for="Gebruiker.Wachtwoord" class="form-control" />
                 <span asp-validation-for="Gebruiker.Wachtwoord"></span>
+            </div>
+            <div>
+            <label asp-for="Gebruiker.PasswordConfirm">Wachtwoord bevestiging:</label>
+                <input asp-for="Gebruiker.PasswordConfirm" class=" form-control" />
+            <span asp-validation-for="Gebruiker.PasswordConfirm"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Gebruiker.Email">Prijs:</label>
