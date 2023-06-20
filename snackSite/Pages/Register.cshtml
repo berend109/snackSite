@@ -1,0 +1,41 @@
+﻿@page
+@model snackSite.Pages.Register
+
+@{
+	ViewData["Title"] = "register";
+}
+
+<div class="container">
+
+	<h1>@ViewData["Title"]</h1>
+	
+	<div class="shadow p-5">
+		<div class="card text-start">
+			<form class="row g-3 p-4" method="POST">
+				<div class="form-floating col-6">
+					<input asp-for="Gebruiker!.Email" type="email" class="form-control" id="floatingEmail" placeholder="Email" required />
+					<label for="floatingEmail">Email</label>
+				</div>
+				<div class="form-floating col-6">
+					<input asp-for="Gebruiker!.Naam" type="text" class="form-control" id="floatingName" placeholder="Naam" required />
+					<label for="floatingName">Naam</label>
+				</div>
+				<div class="form-floating col-6">
+					<input asp-for="Gebruiker!.Wachtwoord" type="password" class="form-control" id="floatingPassword" placeholder="Password" required />
+					<label for="floatingPassword">Password</label>
+				</div>
+				<div class="form-floating col-6">
+					<input asp-for="Gebruiker!.PasswordConfirm" type="password" class="form-control" id="floatingPassword2" placeholder="Password" required />
+					<label for="floatingPassword">Repeat Password</label>
+				</div>
+				<div class="col-6 mt-3">
+					<button type="submit" class="btn btn-outline-success">Register</button>
+				</div>
+				<div class="col-6 mt-3">
+					<a class="btn btn-outline-secondary" asp-area="" asp-page="/Login">Login</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
