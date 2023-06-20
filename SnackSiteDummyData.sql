@@ -1,3 +1,6 @@
+-- select db
+USE snacksite;
+
 -- TABLE Gebruiker
 INSERT INTO Gebruiker (Naam, wachtwoord, Email, Adminrole, Budget)
 VALUES ('Alice', 'password123', 'alice@example.com', true, 7.50);
