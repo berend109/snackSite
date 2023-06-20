@@ -8,6 +8,8 @@ namespace snackSite.Pages
 {
     public class AdminModel : PageModel
     {
+        [BindProperty]
+        public Budget? Budget  { get; set; }
         public IEnumerable <Product> Producten { get; set; } = null!;
         public IEnumerable <Optie> Opties { get; set; } = null!;
         public IEnumerable<Gebruiker> Gebruikers { get; set; } = null!;
@@ -21,6 +23,20 @@ namespace snackSite.Pages
             bool auth = session.CheckAdmin(HttpContext.Session.GetString("user"));
             
             return auth ? Page() : Redirect("/Index");
+        }
+
+        public IActionResult OnPost()
+        {
+            if (Budget.BudgetPrice < 0)
+            {
+                ModelState.AddModelError("Gebruiker.Budget", "Budget mag niet negatief zijn");
+                return Page();
+            }
+
+            BudgetRepository.UpdateBudget(Budget.BudgetPrice);
+            
+            // refresh page
+            return Redirect("/Admin");
         }
     }
 }

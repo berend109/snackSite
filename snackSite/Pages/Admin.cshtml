@@ -8,8 +8,10 @@
 	<div class="d-flex flex-row mt-5 ">
 		<div class="h2 me-1">price cap €</div>
 		<div class="mt-1 h4" style="width: 300px">
-			<input type="text" class="form-control pe-2" style="float: left; width: 50%" placeholder="7.50" />
-			<button class="btn btn-primary ps-2" style="float: right; width: 50%">Update</button>
+			<form method="POST">
+				<input asp-for="Budget!.BudgetPrice" type="number" class="form-control pe-2" style="float: left; width: 50%" placeholder="Budget"/>
+				<button class="btn btn-primary ps-2" style="float: right; width: 50%">Update</button>
+			</form>
 		</div>
 	</div>
 
