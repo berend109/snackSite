@@ -18,6 +18,8 @@ namespace snackSite.Pages
         public IEnumerable<Product> Producten { get; set; } = null!;
         public IEnumerable<Optie> Opties { get; set; } = null!;
         public int OptieID { get; set; }
+        [BindProperty] 
+        public Bestelling Bestelling { get; set; } = null!;
 
         private readonly ILogger<IndexModel> _logger;
 
@@ -38,6 +40,7 @@ namespace snackSite.Pages
             
             Producten = new ProductenRepository().GetProduct();
             Opties = new OptieRepository().GetOptie();
+            DateTime Datumweek = DateTime.Now;
 
             //Searchbar
             if (!string.IsNullOrEmpty(searchTerm))
@@ -65,6 +68,8 @@ namespace snackSite.Pages
 
         public IActionResult OnPostToevoegen(Optie optie, Aanbieder aanbieder, Product product)
         {
+            
+            var createdBestelling = new BestellingRepository().Add(Bestelling);
             return RedirectToPage();
         }
     }
