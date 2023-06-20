@@ -14,12 +14,12 @@ public class UserRepository
     public static Gebruiker Add(string username, string password, string email)
     {
         using var connection = GetConnection();
-        bool adminrole = false;
-        double budget = 7.5;
+        var adminrole = false;
+        const double budget = 7.5;
 
         // make test user for development
         // This can be changed or used when first using the website
-        // to make a default user as the db is empty
+        // to make a default root user as the db can be empty
         if (email == "test@test.nl") { adminrole = true; }
         
         const string sql = @"INSERT INTO gebruiker (Naam, Wachtwoord, Email, Adminrole, Budget) 
