@@ -4,15 +4,15 @@ School opdracht periode 4
 
 ## Inhoudsopgave
 
-### [Inleiding](#inleiding)
+### [Inleiding](#inleiding-1)
 
-### [Installatie](#installatie)
+### [Installatie](#installatie-1)
 
-### [Nuget pakketten](#nuget-pakketten)
+### [Nuget pakketten](#nuget-pakketten-1)
 
-### [Code](#code)
+### [Code](#code-1)
 
-### [Termen](#termen)
+### [Termen](#termen-1)
 
 ## Inleiding
 
