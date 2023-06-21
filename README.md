@@ -183,7 +183,7 @@ De GetConnection() functie:
 
 - hier staan de css/js/images files in. Deze komen bij de front-end te staan. De css en js files worden gebruikt voor de layout en de animaties.
 
-### Termen
+## Termen
 
 - ### CRUD
 
