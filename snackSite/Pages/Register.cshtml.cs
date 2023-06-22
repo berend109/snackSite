@@ -22,14 +22,11 @@ public class Register : PageModel
 
     public IActionResult OnPost()
     {
-       var user = UserRepository.Get(Gebruiker?.Email);
-       
-       if (user != null && Gebruiker?.Wachtwoord != Gebruiker?.PasswordConfirm)
-       {
-           return Page();
-       }
-
-       UserRepository.Add(Gebruiker.Naam, Hash.HashedPassword(Gebruiker.Wachtwoord), Gebruiker.Email);
-       return Redirect("/Index");
+        if (UserRepository.Get(Gebruiker?.Email) is not null)
+        {
+            return Redirect("/Login");
+        }
+        UserRepository.Add(Gebruiker.Naam, Hash.HashedPassword(Gebruiker.Wachtwoord), Gebruiker.Email);
+        return Redirect("/Index");
     }
 }
