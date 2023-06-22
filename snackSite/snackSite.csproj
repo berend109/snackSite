@@ -52,6 +52,7 @@
     <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Delete.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Index.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\CRUDProducten\Update.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Bestel\Bestellen.cshtml" />
   </ItemGroup>
 
 </Project>
